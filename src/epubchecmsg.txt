@@ -71,7 +71,7 @@ nav, section {
 
 しかし、出力されるメッセージが日本語化されていないことや、メッセージの内容の専門性が高いため対処に困る人もいることでしょう。このページではメッセージの意味を日本語で解説し、代表的な対処方法について紹介します。
 
-メッセージの一覧と分類は、”[EPUB 3 Best Practices](http://shop.oreilly.com/product/0636920024897.do)” の記載に従いました。<small class="muted">この本の翻訳ではありません。</small>
+メッセージの一覧と分類は、”[EPUB 3 Best Practices](http://shop.oreilly.com/product/0636920024897.do)” の記載を参考にしました。<small class="muted">この本の翻訳ではありません。</small>
 
 <div class="well well-small" markdown="1">
 最終更新日
@@ -91,6 +91,7 @@ nav, section {
 
 <div class="alert alert-block" markdown="1">
 - メッセージの翻訳は公式なものではありません。翻訳上の誤りが含まれている可能性があります。
+- メッセージの一覧は完全なものではありません。
 - 本稿執筆時の EpubCheckのバージョンは 3.0 です。
 </div>
 
@@ -195,7 +196,7 @@ nav, section {
 
 **意味**
 
-:   ここには [要素名] を記述できません。（閉じタグ、テキスト、 [要素名B])である必要があります
+:   ここには [要素名A] を記述できません。（閉じタグ、テキスト、 [要素名B])である必要があります
 
 **原因と対処**
 
@@ -213,7 +214,7 @@ nav, section {
 
 **原因と対処**
 
-:   要素Aの中に、必要なはずの[要素名B]が欠けていることが原因です。例えばパッケージ文書の `metadata` 要素には、 `dc:title`、 `dc:identifier`、 `dc:language` が必要です。[要素名B]を加えてください。
+:   [要素名A]の中に、必要なはずの[要素名B]が欠けていることが原因です。例えばパッケージ文書の `metadata` 要素には、 `dc:title`、 `dc:identifier`、 `dc:language` が必要です。[要素名B]を加えてください。
 
 ----------------------------------------
 
@@ -303,6 +304,25 @@ nav, section {
 **原因と対処**
 
 :   名前空間宣言を行わずに、`epub` などの接頭辞を利用した場合に出力されます。接頭辞に対応した名前空間宣言を行なってください。
+
+<div class="bs-docs-example" markdown="1">
+次の例は、接頭辞 epub が宣言されていないためエラーになります。
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <body epub:type="cover">
+    …
+    </body>
+    </html>
+
+次は正しい例です。接頭辞 epub が名前空間宣言されています。
+
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf">
+    <body epub:type="cover">
+    …
+    </body>
+    </html>
+
+</div>
 
 ----------------------------------------
 
@@ -523,7 +543,7 @@ nav, section {
 
 **参考**
 
-:   <http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-zip-container-mime>
+:   - <http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-zip-container-mime>
 
 ----------------------------------------
 
@@ -612,7 +632,7 @@ nav, section {
 
 **参考**
 
-:   <http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-metainf-container.xml>
+:   - <http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-metainf-container.xml>
 
 
 ----------------------------------------
@@ -676,7 +696,7 @@ nav, section {
 
 **参考**
 
-:   <http://www.idpf.org/epub/30/spec/epub30-publications.html#last-modified-date>
+:   - <http://www.idpf.org/epub/30/spec/epub30-publications.html#last-modified-date>
 
 ----------------------------------------
 
@@ -774,11 +794,11 @@ nav, section {
 
 **原因と対処**
 
-:   パッケージ文書中で必要な properties属性を宣言していないアイテムがあります。例えば JavaScriptを利用したXHTMLコンテンツ文書が scripted のプロパティを宣言していない場合が挙げられます。
+:   パッケージ文書中で必要な `properties` 属性を宣言していないアイテムがあります。例えば JavaScriptを利用したXHTMLコンテンツ文書が scripted のプロパティを宣言していない場合が挙げられます。
 
 **参考**
 
-:   <http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-item-property-values>
+:   - <http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-item-property-values>
 
 ----------------------------------------
 
@@ -792,7 +812,7 @@ nav, section {
 
 **原因と対処**
 
-:   `properties`　属性に 'nav' を指定できる `item` 要素は1つだけです。ナビゲーション文書に使う item を1つ選び、それ以外の item からは 'nav' を取り除いてください。
+:   `properties`　属性に 'nav' を指定できる `item` 要素は1つだけです。ナビゲーション文書に使うアイテムを1つ選び、それ以外のアイテムからは 'nav' を取り除いてください。
 
 ----------------------------------------
 
@@ -876,7 +896,18 @@ nav, section {
 
 **原因と対処**
 
-:   `item` 要素は `fallback` 属性によって何段階にもフォールバックさせることができますが、その方向は一方的です。逆方向のフォールバックが含まれているとこのメッセージが出力されます。フォールバックの順序を確認してください。
+:   `item` 要素は `fallback` 属性によって何段階にもフォールバックさせることができますが、途中に逆方向のフォールバックが含まれているとこのメッセージが出力されます。フォールバックの順序を確認してください。
+
+<div class="bs-docs-example" markdown="1">
+次の例は循環参照です。item3 はフォールバック元の祖先である item1 をフォールバック先に指定しているためエラーになります。
+
+    <manifest>
+    <item id="item1" … fallback="item2" />
+    <item id="item2" … fallback="item3" />
+    <item id="item3" … fallback="item1" />
+    </manifest>
+
+</div>
 
 ----------------------------------------
 
@@ -894,7 +925,7 @@ nav, section {
 
 **参考**
 
-:   <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-docs-package>
+:   - <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-docs-package>
 
 ----------------------------------------
 
@@ -912,7 +943,7 @@ nav, section {
 
 **参考**
 
-:   <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata>
+:   - <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata>
 
 ----------------------------------------
 
@@ -930,7 +961,7 @@ nav, section {
 
 **参考**
 
-:   <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata>
+:   - <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata>
 
 ----------------------------------------
 
@@ -1016,6 +1047,16 @@ nav, section {
 
 ----------------------------------------
 
+<div class="alert alert-block alert-error" markdown="1">
+
+次のメッセージは最新の仕様に基づいていません。
+
+`pubdate` 属性は HTML5 の仕様から削除されています。`pubdate` 属性を使用しないでください。
+
+</div>
+
+<div class="muted" markdown="1">
+
 メッセージ
 
 :       For each Document, there must be no more than one time element with a pubdate attribute that does not have an ancestor article element
@@ -1028,7 +1069,19 @@ nav, section {
 
 :   原則として1つの文書の中に `pubdate` 属性を指定した `time` 要素は1つだけ記述できます。ただし `article` 要素がある場合には、`article` 要素ごとに1つずつ記述できます。このルールに従うようにしてください。
 
+</div>
+
 ----------------------------------------
+
+<div class="alert alert-block alert-error" markdown="1">
+
+次のメッセージは最新の仕様に基づいていません。
+
+`pubdate` 属性は HTML5 の仕様から削除されています。`pubdate` 属性を使用しないでください。
+
+</div>
+
+<div class="muted" markdown="1">
 
 メッセージ
 
@@ -1041,6 +1094,8 @@ nav, section {
 **原因と対処**
 
 :   `article` 要素の中に `pubdate` 属性を持つ `time` 要素を複数記述することはできません。1つだけ記述してください。
+
+</div>
 
 ----------------------------------------
 
@@ -1146,7 +1201,7 @@ nav, section {
 
 **原因と対処**
 
-:   前述のエラーと似ていますが、属性が複数の要素を参照可能な場合にはこのメッセージが出力されます。aria-labelledby など。属性がそれぞれの要素を正しく参照できているか確認してください。
+:   前述のエラーと似ていますが、属性が複数の要素を参照可能な場合にはこのメッセージが出力されます。属性がそれぞれの要素を正しく参照できているか確認してください。
 
 ----------------------------------------
 
@@ -1225,6 +1280,17 @@ nav, section {
 :   - <http://www.idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-content-type-attribute>
     - <http://www.idpf.org/epub/vocab/structure/>
 
+<div class="bs-docs-example" markdown="1">
+次の例では epub:type に定義されていないプロパティ "foo" を使用しているためエラーになります。
+
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf">
+    <body epub:type="foo">
+    …
+    </body>
+    </html>
+
+</div>
+
 ----------------------------------------
 
 メッセージ
@@ -1237,7 +1303,27 @@ nav, section {
 
 **原因と対処**
 
-:   epub:typeのプロパティは接頭辞を付けることで独自の拡張することができますが、接頭辞が宣言されていない場合、このメッセージが出力されます。`html` 要素の中で `epub:prefix` 属性を使って接頭辞を宣言してください。
+:   epub:type のプロパティは接頭辞を付けることで独自の拡張することができますが、接頭辞が宣言されていない場合、このメッセージが出力されます。`html` 要素の中で `epub:prefix` 属性を使って接頭辞を宣言してください。
+
+
+<div class="bs-docs-example" markdown="1">
+次の例では epub:type を接頭辞 my で拡張し、独自の値を指定しています。しかし my の接頭辞が定義されていないためエラーになります。
+
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf">
+    <body epub:type="my:foo">
+    …
+    </body>
+    </html>
+
+次は正しい例です。`html` 要素の中で my の接頭辞を宣言しています。
+
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf" epub:prefix="my: http://example.com">
+    <body epub:type="my:foo">
+    …
+    </body>
+    </html>
+
+</div>
 
 ----------------------------------------
 
@@ -1314,7 +1400,7 @@ nav, section {
 
 **参考**
 
-:   <http://www.idpf.org/epub/altss-tags/>
+:   - <http://www.idpf.org/epub/altss-tags/>
 
 <div class="bs-docs-example" markdown="1">
 次の例は、横組み:horizontal と 縦組み:vertical を同時に指定しているためエラーになります。
@@ -1333,11 +1419,22 @@ nav, section {
 
 **意味**
 
-:   実体 [文字実体参照] を参照していますが、宣言されていません
+:   実体 [実体参照] を参照していますが、宣言されていません
 
 **原因と対処**
 
-:   XML/XHTML5 で使える文字実体参照は &amp;amp;、&amp;lt;、&amp;gt;、&amp;quot;、&amp;apos; だけです。それ以外の文字、例えば &amp;copy; などを記述した場合このメッセージが出力されます。このような文字は代わりに文字参照(&amp;#xA9;)を使って記述してください。
+:   XML/XHTML5 で使える実体参照は &amp;amp;、&amp;lt;、&amp;gt;、&amp;quot;、&amp;apos; だけです。それ以外の文字を記述した場合このメッセージが出力されます。このような文字は代わりに文字参照を使って記述してください。
+
+<div class="bs-docs-example" markdown="1">
+次の例は著作権記号 &#xA9; を実体参照で記述しているためエラーになります。
+
+    <p>Copyright &copy; 2013 電書ちゃんねる</p>
+
+次は正しい例です。同じ文字を実体参照ではなく文字参照で記述しています。
+
+    <p>Copyright &xA9; 2013 電書ちゃんねる</p>
+
+</div>
 
 ----------------------------------------
 
@@ -1351,7 +1448,18 @@ nav, section {
 
 **原因と対処**
 
-:   XML/XHTML5 でテキストに '&' の文字を使うことはできません。'&' を表示するには '&amp;amp;' と記述してください。
+:   XML/XHTML5 でテキストに '&' の文字を使うことはできません。'&' を表すには '&amp;amp;' と記述してください。
+
+<div class="bs-docs-example" markdown="1">
+次の例はテキストに '&' を使っているためエラーになります。
+
+    <title>ガールズ & パンツァー</title>
+
+次は正しい例です。'&' を実体参照で記述しています。
+
+    <title>ガールズ &amp; パンツァー</title>
+
+</div>
 
 ----------------------------------------
 
@@ -1369,3 +1477,6 @@ nav, section {
 
 </section>
 
+<footer class="footer" markdown="1">
+
+</footer>

@@ -1,0 +1,1962 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css" />
+<style type="text/css">
+body {
+  max-width: 1024px;
+  margin: auto;
+  padding: 1em 2em;
+}
+</style>
+<title>EpubCheck 日本語訳メッセージ一覧</title>
+</head>
+<body>
+
+<div class="page-header">
+
+<p><img width="200" src="images/denden_proj_logo.png" alt="" /></p>
+
+<h1 id="toc_index_1">EpubCheck 日本語訳メッセージ一覧</h1>
+
+</div>
+
+<p><a href="https://code.google.com/p/epubcheck/">EpubCheck</a> はEPUBの検証ソフトウェアで、EPUBが正しく作られているのかを確認する上で欠かせないツールです。</p>
+
+<p>しかし、出力されるメッセージが日本語化されていないことや、メッセージの内容の専門性が高いため対処に困る人もいることでしょう。このページではメッセージの意味を日本語で解説し、代表的な対処方法について紹介します。</p>
+
+<p>メッセージの一覧と分類は、”<a href="http://shop.oreilly.com/product/0636920024897.do">EPUB 3 Best Practices</a>” の記載を参考にしました。<small class="muted">この本の翻訳ではありません。</small></p>
+
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=strawberria-22&o=9&p=8&l=as1&asins=B00B5KBVIO&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+<div class="well well-small">
+
+<dl>
+<dt>最終更新日</dt>
+<dd>2013-5-18</dd>
+
+<dt>作成者</dt>
+<dd>ろす (<a href="http://twitter.com/lost_and_found">@lost_and_found</a>) from <a href="http://densho.hatenablog.com/">電書ちゃんねる</a></dd>
+</dl>
+
+</div>
+
+
+<div class="alert alert-block">
+
+<ul>
+<li>メッセージの翻訳は公式なものではありません。翻訳上の誤りが含まれている可能性があります。</li>
+<li>メッセージの一覧は完全なものではありません。</li>
+<li>本稿執筆時の EpubCheckのバージョンは 3.0 です。</li>
+</ul>
+
+</div>
+
+<nav>
+
+<h2 id="toc_index_2">目次</h2>
+
+<ol xmlns="http://www.w3.org/1999/xhtml">
+<li><a href="#toc_index_2"><span>目次</span></a></li>
+<li><a href="#toc_index_3"><span>XMLファイルに共通するエラー</span></a>
+<ol>
+<li><a href="#toc_index_4"><span>文書のエラー</span></a></li>
+<li><a href="#toc_index_5"><span>要素のエラー</span></a></li>
+<li><a href="#toc_index_6"><span>属性のエラー</span></a></li>
+<li><a href="#toc_index_7"><span>文字のエンコーディング</span></a></li>
+<li><a href="#toc_index_8"><span>リンクのエラー</span></a></li>
+</ol>
+</li>
+<li><a href="#toc_index_9"><span>コンテナのエラー</span></a></li>
+<li><a href="#toc_index_10"><span>パッケージの検証</span></a></li>
+<li><a href="#toc_index_11"><span>コンテンツの検証</span></a>
+<ol>
+<li><a href="#toc_index_12"><span>文書とヘッダーのエラー</span></a></li>
+<li><a href="#toc_index_13"><span>map 要素のエラー</span></a></li>
+<li><a href="#toc_index_14"><span>form 要素のエラー</span></a></li>
+<li><a href="#toc_index_15"><span>オーディオ／ビデオのエラー</span></a></li>
+<li><a href="#toc_index_16"><span>参照のエラー</span></a></li>
+<li><a href="#toc_index_17"><span>epub:type プロパティのエラー</span></a></li>
+<li><a href="#toc_index_18"><span>SSMLのエラー</span></a></li>
+<li><a href="#toc_index_19"><span>CSS のエラー</span></a></li>
+<li><a href="#toc_index_20"><span>代替スタイルシートのエラー</span></a></li>
+<li><a href="#toc_index_21"><span>実体のエラー</span></a></li>
+</ol>
+</li>
+</ol>
+
+</nav>
+
+<section>
+
+<h2 id="toc_index_3">XMLファイルに共通するエラー</h2>
+
+<h3 id="toc_index_4">文書のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Content is not allowed in prolog
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>プロローグ部分にはコンテンツを記述できません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ルート要素よりも前にテキストノードが存在していることが原因です。ルート要素より前にはXML処理命令とDOCTYPE宣言しか記述することはできません。問題のある記述部分を取り除いてください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>下の例はDOCTYPE宣言とルート要素の間にテキストノードを記述しているためエラーとなります（こんなところにネタバレ書かないでください）。</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!-- XML宣言 --&gt;
+&lt;!DOCTYPE html&gt;&lt;!-- DOCTYPE宣言 --&gt;
+犯人はヤス
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;!-- ルート要素 --&gt;
+…
+&lt;/html&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Content is not allowed in trailing section
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ルート要素よりも後ろのセクションにはコンテンツを記述できません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ルート要素よりも後ろにテキストノードが存在していることが原因です。問題のある記述部分を取り除いてください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>下の例はルート要素以降にテキストノードを記述しているためエラーとなります。</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!-- XML宣言 --&gt;
+&lt;package xmlns="http://www.idpf.org/2007/opf" …&gt;&lt;!-- ルート要素 --&gt;
+…
+&lt;/package&gt;&lt;!-- ルート要素の終わり --&gt;
+かゆい
+うま
+</code></pre>
+
+</div>
+
+<hr />
+
+<h3 id="toc_index_5">要素のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Element [要素名A] not allowed here; expected the element end-tag, text or element [要素名B]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ここには [要素名A] を記述できません。（閉じタグ、テキスト、 [要素名B])である必要があります</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>正しい構文に従って要素が使われていない場合に表示されます。特にXHTMLの一部の要素では、中に書くことのできる要素が決まっています。問題のある要素の親要素との関係に注意してください。またタグの閉じ忘れがある場合も考えられます。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Element [要素名A] incomplete; expected [要素名B]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名A] が不完全です。[要素名B]が必要です</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>[要素名A]の中に、必要なはずの[要素名B]が欠けていることが原因です。例えばパッケージ文書の <code>metadata</code> 要素には、 <code>dc:title</code>、 <code>dc:identifier</code>、 <code>dc:language</code> が必要です。[要素名B]を加えてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The prefix [接頭辞名] for element [要素名] is not bound
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名]の[接頭辞名]に関連付けがありません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>名前空間宣言を行わずに<code>dc</code> などの接頭辞を利用した場合に出力されます。接頭辞に対応した名前空間宣言を行なってください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例では <code>dc</code> の接頭辞が何の名前空間を指すのかわからないためエラーとなります。</p>
+
+<pre><code>&lt;metadata&gt;
+&lt;dc:title&gt;タイトル&lt;/dc:title&gt;
+…
+&lt;/metadata&gt;
+</code></pre>
+
+<p>次は正しい例です。名前空間宣言によって接頭辞 <code>dc</code> をダブリンコアメタデータ要素集合の名前空間に結びつけています。</p>
+
+<pre><code>&lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+&lt;dc:title&gt;タイトル&lt;/dc:title&gt;
+…
+&lt;/metadata&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Element [要素名] missing required attribute [属性名]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名]に必須な[属性名]が欠けています</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>要素によっては特定の属性が必須となるものがあります。指摘された属性を要素に加えてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Element type [要素名] must be followed by either attribute specifications, "&gt;" or "/&gt;"
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名]の後ろには仕様に従った属性か、”>"または"/>"が必要です</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>要素が正しく書かれていません。属性の値の引用符やタグのとじ忘れがあった場合に出力されます。対象の要素の属性と閉じタグを確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_6">属性のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Attribute [属性名A] not allowed here; expected attribute [属性名B]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[属性名A] はここでは利用できません。利用できる属性は[属性名B]です</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>誤った属性を利用している場合に出力されるメッセージです。正しい属性を利用しているか、属性名のスペルミスがないか確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The prefix [接頭辞名] for attribute [属性名] associated with an element type [要素名] is not bound
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名]の[属性名]で使われている[接頭辞名]に関連付けがありません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>名前空間宣言を行わずに、<code>epub</code> などの接頭辞を利用した場合に出力されます。接頭辞に対応した名前空間宣言を行なってください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例は、接頭辞 epub が宣言されていないためエラーになります。</p>
+
+<pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;body epub:type="cover"&gt;
+…
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>次は正しい例です。接頭辞 epub が名前空間宣言されています。</p>
+
+<pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf"&gt;
+&lt;body epub:type="cover"&gt;
+…
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Duplicate ID [値]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>IDの[値]が重複しています</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>文書の中に同じID属性の値を持った要素が複数存在しています。ID属性が重複しないようにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Value of attribute "id" is invalid; must be an XML name without colons
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>"id" 属性の値が不正です。コロンを含まないXML名を指定してください</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>id</code> 属性の値が適切ではありません。値にはアルファベット、数字、アンダースコア、ハイフンが利用できますが、先頭の文字に数字、ハイフンは利用できません。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The value of attribute [属性名] associated with an element type [要素名] must notcontain the '&lt;' character
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名]にある[属性名]の値は ’&lt;’ 文字を含んではなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>’&lt;’は属性の値に使えない文字です。この文字を取り除いてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_7">文字のエンコーディング</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Only UTF-8 and UTF-16 encodings are allowed, detected [エンコーディング名]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>エンコーディングにはUTF-8、UTF-16のみが利用できますが [エンコーディング名] が使われています</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ファイルがUTF-8またはUTF-16でエンコーディングされていません。エンコーディングを確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Malformed byte sequence: [内容]. Check encoding
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>不正なバイト文字列[内容]があります。エンコーディングを確認してください</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>Unicodeの仕様に従っていないバイト文字列があります。別の文字集合からUnicodeに変換した場合に起こりえます。不正な箇所は視認できません。不正な箇所を検出できるXMLエディタで修正してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Any Publication Resource that is an XML-Based Media Type must be a conformant XML 1.0 Document. XML Version retrieved: [バージョン番号]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>XMLベースのメディアタイプを持つあらゆる出版物リソースはXML 1.0に適合した文書でなければなりません。XMLバージョンが[バージョン番号]になっています。</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>XMLバージョンが1.0以外のものを指定したXML文書で出力されるメッセージです。XML宣言のversion属性が 1.0 になっているか確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_8">リンクのエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>'[ファイル名]': referenced resource missing in the package
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>参照されているリソース[ファイル名]がパッケージの中に存在しません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>他のファイルを参照する際、参照先のファイルがZipアーカイブの中に存在しないとこのメッセージが出力されます。参照先のファイルの存在を確認してください。参照パスの記述に誤りがある場合も考えられます。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>'[識別子名]': fragment identifier is not defined in '[ファイル名]'
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>フラグメント識別子'[識別子名]'が'[ファイル名]'に定義されていません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>他のファイルを参照する際、参照先のファイルの中にフラグメント識別子に指定した <code>id</code> 属性を持つ要素が存在しないとこのメッセージが出力されます。参照先のファイルのフラグメント識別子を確認してください。参照パスの記述に誤りがある場合も考えられます。</p>
+</dd>
+</dl>
+
+</section>
+
+<section>
+
+<h2 id="toc_index_9">コンテナのエラー</h2>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>File name contains characters disallowed in OCF file names: [文字]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>OCF内のファイル名に不正な文字[文字]が含まれています</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><a href="http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-filenames">OFCの仕様</a>にはファイル名に使えない文字が定義されています。該当する文字を使わないようにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Filename contains spaces. Consider changing filename such that URIescaping is not necessary
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ファイル名にスペースが含まれています。URIエスケープの必要がないファイル名への変更を検討してください。</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ファイル名にスペースが含まれているとうまく動作しないリーディングシステムがあります。スペースを含まないファイル名にしてください。URIエスケープとはスペース文字をURIに含める際に「%20」に変換する方法です。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>File name contains non-ascii characters: [文字]. Consider changing filename
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ファイル名に非アスキー文字[文字]が含まれています。別のファイル名への変更を検討してください。</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ファイル名に日本語などの文字が含まれているとうまく動作しないリーディングシステムがあります。アスキー文字だけを使ったファイル名に変更してください。（EPUB 3の仕様上は非アスキー文字のファイル名も認められていますが、動作しない実装があるため警告しています）</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Filename is not allowed to end with '.'
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ファイル名は '.' で終わってはなりません。</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ファイル名の最後の文字を '.' 以外のものにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Corrupted ZIP header
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ZIPのヘッダー部が壊れています。</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ファイルのヘッダ部ーがZIPの仕様に従っていません。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Cannot read header
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ヘッダー部が読み取れません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ZIPファイルが壊れています。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Length of first filename in archive must be 8, but was [数値]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p><dt><strong>原因と対処</strong></dt></p>
+</dd>
+
+<dd>
+<p>ZIPファイルの先頭には mimetype ファイルが配置されている必要があります。それ以外のファイルが配置されている場合にこのメッセージが出力されます。EPUBの仕様に従って正しくZIP圧縮してください。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-zip-container-mime">http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-zip-container-mime</a></li>
+</ul>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Mimetype entry missing or not the first in archive
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>Mimetype のエントリが欠けているか、アーカイブの先頭にありません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ZIPファイルの先頭に mimetype ファイル以外のファイルが配置されており、かつファイル名が8文字だった場合に出力されます。EPUBの仕様に従って正しくZIP圧縮してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Extra field length for first filename must be 0, but was [数値]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>最初のファイル名の extra field length は 0 でなければなりませんが[数値]になっています</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>ZIPコンテナにメタデータが加えられており、EPUBの仕様に反しています。別のZIPライブラリを試したりしてみましょう。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Mimetype contains wrong type (application/epub+zip) expected
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>Mimetype に不正なメディアタイプが使われています。application/epub+zip である必要があります</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>mimetype ファイルをテキストエディタで編集して、内容が "application/epub+zip" となるようにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Mimetype file should contain only the string "application/epub+zip"
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>Mimetype ファイルには "application/epub+zip" の文字列のみであるべきです</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>mimetype ファイルをテキストエディタで編集して、"application/epub+zip" 以外の文字を取り除いてください。スペースや改行が含まれていてはなりません。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Required META-INF/container.xml resource is missing
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>必須ファイル META-INF/container.xml が見つかりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>META-INF/container.xml が欠けているため作成してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>No rootfiles with media type 'application/oebps-package+xml'
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>メディアタイプが 'application/oebps-package+xml' であるルートファイルがありません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>META-INF/container.xml にパッケージ文書を記述した <code>rootfile</code> 要素が欠けています。また、 <code>rootfile</code> 要素の <code>media-type</code> 属性の値にスペルミスがある場合も考えられます。エントリを正しく記述してください。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-metainf-container.xml">http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-metainf-container.xml</a></li>
+</ul>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Entry [ファイル名] not found in zip file
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>エントリの[ファイル名]がZIPファイルの中に見当たりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>META-INF/container.xml の <code>rootfile</code> 要素に記述されたパッケージ文書が見つからない場合に出力されます。<code>rootfile</code> 要素の <code>full-path</code> 属性の値がパッケージ文書を正しく指しているか確認してください。</p>
+</dd>
+</dl>
+
+</section>
+
+<section>
+
+<h2 id="toc_index_10">パッケージの検証</h2>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>unique-identifier attribute in package element must reference an existing identifier element id
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>パッケージ要素の unique-identifier 属性は既存の identifier 要素の id を参照しなければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>package</code> 要素の <code>unique-identifier</code> 属性の値に一致する <code>id</code> 属性を持った <code>dc:identifier</code> 要素が <code>metadata</code> 要素の中に存在しない場合に出力されるメッセージです。<code>package</code> 要素と <code>dc:identifier</code> 要素を確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>character content of element "[要素名]" invalid; must be a string with length at least 1
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名]の内容テキストが不正です。少なくとも1文字以上なければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>要素の内容が空だったりスペース文字だけである場合に出力されます。適切な文字列を記述してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Package dcterms:modified meta element must occur exactly once
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>パッケージ文書の dcterms:modified meta要素は1つだけ存在しなければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>パッケージ文書には <code>property</code> 属性が dcterms:modified である <code>meta</code> 要素が1つ必要です。欠けていたり複数あったりしないか確認してください。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-publications.html#last-modified-date">http://www.idpf.org/epub/30/spec/epub30-publications.html#last-modified-date</a></li>
+</ul>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>dcterms:modified illegal syntax (expecting: 'CCYY-MM-DDThh:mm:ssZ')
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>dcterms:modified の記法が不正です（'CCYY-MM-DDThh:mm:ssZ'形式である必要があります）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>dcterms:modified を指定した <code>meta</code> 要素の値が <code>CCYY-MM-DDThh:mm:ssZ</code> の形式であるか確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>@refines missing target id: '[値]'
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>refines 属性の参照先アイテムが見つかりません。id: '[値]'</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>meta</code> 要素の <code>refines</code> 属性には、'#' に続けて参照する要素が持つ <code>id</code> 属性の値を記述します。指定した <code>id</code> 属性を持った要素が正しく記述されているか確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>[種類] file [ファイル名] is missing
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[種類]のファイル[ファイル名]が見つかりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>manifest</code> の <code>item</code> 要素で宣言されているファイルが、実際のZipアーカイブの中に存在しない場合に出力されます。[種類]の箇所には例えば画像ファイルなら 'image' のように、ファイルの種類が入ります。ファイルの存在を確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>item ([ファイル名]) exists in the zip file, but is not declared in the manifest file
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>マニフェストに宣言されていないアイテム ([ファイル名]) がZipファイルの中にあります</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>実際のZipアーカイブの中に存在するファイルが <code>manifest</code> の <code>item</code> 要素として宣言されていない場合に出力されます。このファイルの <code>item</code> 要素を記述してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>'[URI]': remote resource reference not allowed; resource must be placed in the OCF
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>リモートリソース '[URI]' を参照することはできません。リソースをOCFの中に配置してください</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>インターネット上のアイテムを利用できるのは、それがオーディオとビデオの場合のみです。それ以外のファイルはすべてZipファイルの中に配置しなければなりません。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Item property: [プロパティ] is not defined for: [メディアタイプ]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>アイテムのプロパティ[プロパティ]は[メディアタイプ]には使えません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>指定できる <code>properties</code> 属性の値はメディアタイプ毎に決まっています。指定できないプロパティは取り除いてください</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>This file should not declare in opf the properties: X
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>このファイルには OPF で次のプロパティの宣言が必要です: [プロパティ]</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>パッケージ文書中で必要な <code>properties</code> 属性を宣言していないアイテムがあります。例えば JavaScriptを利用したXHTMLコンテンツ文書が scripted のプロパティを宣言していない場合が挙げられます。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-item-property-values">http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-item-property-values</a></li>
+</ul>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Exactly one manifest item must declare the 'nav' property (number of 'nav' items: [数値]).
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>'nav' プロパティを持つことのできるアイテムは1つだけです（'nav' を指定したアイテムの数: [数値]）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>properties</code>　属性に 'nav' を指定できる <code>item</code> 要素は1つだけです。ナビゲーション文書に使うアイテムを1つ選び、それ以外のアイテムからは 'nav' を取り除いてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Multiple occurrences of the 'cover-image' property (number of 'cover-image' items: [数値]).
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>'cover-image' プロパティを持つアイテムが複数あります（'cover-image' を指定したアイテムの数: [数値]）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>properties</code>　属性に 'cover-image' を指定できる <code>item</code> 要素は1つだけです。表紙画像に使う item を1つ選び、それ以外の item からは 'cover-image' を取り除いてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Object type and the item media-type declared in manifest, do not match
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>オブジェクトの type とマニフェストにあるアイテムの media-type が一致しません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>XHTMLコンテンツ文書で <code>object</code> タグが参照するリソースの <code>type</code> 属性が、<code>manifest</code> の <code>item</code> 要素の <code>media-type</code> 属性と一致していない場合に出力されます。正しいメディアタイプを確認して、両者が一致するようにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Manifest item element fallback attribute must resolve to another manifest item (given reference was 'X')
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>マニフェストアイテムの fallback 属性は他のマニフェストアイテムに解決しなければなりません（([値]' を参照しています）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>manifest</code> 要素の中の <code>item</code> 要素が <code>fallback</code> 属性を持つ場合、その値はフォールバック先となる <code>item</code> 要素の <code>id</code> 属性でなければなりません。<code>fallback</code> 属性の値にスペルミスがないか確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Spine item with non-standard media-type '[メディアタイプ]'' with no fallback
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>非標準的なメディアタイプ[メディアタイプ]の spine アイテムにフォールバックがありません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>XHTML、SVG文書以外のアイテムを <code>spine</code> 要素内の <code>itemref</code> 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を <code>fallback</code>　属性によって参照する必要があります。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Spine item with non-standard media-type '[メディアタイプ]' with fallback to non-spine-allowed media-type
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>非標準的なメディアタイプ '[メディアタイプ]' の spine アイテムが spine に記述できないアイテムをフォールバックに指定しています</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>XHTML、SVG文書以外のアイテムを <code>spine</code> 要素内の <code>itemref</code> 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を <code>fallback</code>　属性によって参照する必要があります。それ以外のアイテムをフォールバックに指定すると、このメッセージが出力されます。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Circular reference in fallback chain
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>フォールバックチェインに循環参照があります</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>item</code> 要素は <code>fallback</code> 属性によって何段階にもフォールバックさせることができますが、途中に逆方向のフォールバックが含まれているとこのメッセージが出力されます。フォールバックの順序を確認してください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例は循環参照です。item3 はフォールバック元の祖先である item1 をフォールバック先に指定しているためエラーになります。</p>
+
+<pre><code>&lt;manifest&gt;
+&lt;item id="item1" … fallback="item2" /&gt;
+&lt;item id="item2" … fallback="item3" /&gt;
+&lt;item id="item3" … fallback="item1" /&gt;
+&lt;/manifest&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Media overlay items must be of the 'application/smil+xml' type (given type was '[メディアタイプ]')
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>メディアオーバーレイのアイテムはメディアタイプが 'application/smil+xml' でなければなりません（'[メディアタイプ]' が指定されています）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>item</code> 要素にメディアオーバーレイ文書を宣言した場合、その <code>media-type</code> 属性は 'application/smil+xml' としてください。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-docs-package">http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-docs-package</a></li>
+</ul>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Item media:duration meta element not set (expecting: meta property= 'media:duration' refines='#[値]')
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>media:duration の meta　要素が指定されていません（meta 要素の property属性に 'media:duration', refines属性に　'#[値]' を指定する必要があります ）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>コンテンツ文書にメディアオーバーレイを付与する場合、その文書の再生時間を記述した <code>meta</code> 要素を記述する必要があります。この指定が欠けているとこのメッセージが出力されます。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata">http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata</a></li>
+</ul>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Global media:duration meta element not set
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>グローバルな media:duration の meta　要素が指定されていません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>メディアオーバーレイを付与したコンテンツでは、文書ごとの再生時間を記述した <code>meta</code> 要素の他に、それらの再生時間を合計したグローバルな <code>meta</code> 要素を記述する必要があります。この指定が欠けているとこのメッセージが出力されます。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata">http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata</a></li>
+</ul>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>spine element toc attribute must reference the NCX manifest item (referenced media type was '[メディアタイプ]')
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>spine 要素の toc 属性は NCX のマニフェストアイテムを参照しなければなりません（'[メディアタイプ]'を参照しています）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>spine</code> 要素の <code>toc</code> 属性はNCXを参照しなければなりません。参照する <code>item</code> 要素の <code>media-type</code>属性が 'application/x-dtbncx+xml' となっていない場合にはこのメッセージが出力されます。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>spine element toc attribute must be set when an NCX is included in the publication
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>出版物にNCXがある場合、spine要素のtoc属性を指定しなければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>NCXファイルがあるにも関わらず、<code>spine</code> 要素の <code>toc</code> 属性を利用していない場合にこのメッセージが出力されます。<code>toc</code> 属性を記述してください。</p>
+</dd>
+</dl>
+
+</section>
+
+<section>
+
+<h2 id="toc_index_11">コンテンツの検証</h2>
+
+<h3 id="toc_index_12">文書とヘッダーのエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The lang and xml:lang attributes must have the same value
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>lang 属性と xml:lang 属性は同じ値でなければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>lang 属性はHTMLの属性、 xml:lang 属性はXMLの属性で、いずれも言語を表します。両者は併用可能ですが、異なる値を指定すると仕様に反するため、このメッセージが出力されます。両者で同じ値をとるようにしてください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例は、<code>lang</code> 属性は英語'en'、<code>xml:lang</code> 属性は日本語'ja'を指定しているのでエラーになります。</p>
+
+<pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="ja"&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>There must not be more than one meta element with a charset attribute per document
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>charset 属性を持つ meta 要素は1つよりも多くあってはなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>meta</code> 要素に <code>charset</code> 属性を指定してコンテンツのエンコーディングを表現しますが、複数記述すると仕様に反するためこのメッセージが出力されます。1つだけ記述してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The sizes attribute must not be specified on link elements that do not have a rel attribute that specifies the icon keyword
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>rel 属性でキーワードに icon を指定しない link 要素では sizes 属性を指定してはなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>sizes</code>属性はアイコンのピクセル数を指定する属性です。<code>rel</code> 属性に icon 以外の値を指定した <code>link</code> 要素以外では <code>sizes</code> 属性を使えないため取り除いてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<div class="alert alert-block alert-error">
+
+<p>次のメッセージは最新の仕様に基づいていません。</p>
+
+<p><code>pubdate</code> 属性は HTML5 の仕様から削除されています。<code>pubdate</code> 属性を使用しないでください。</p>
+
+</div>
+
+<div class="muted">
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>For each Document, there must be no more than one time element with a pubdate attribute that does not have an ancestor article element
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>個々の文書では、親要素に article 要素がない場合には、 pubdate 属性を指定した time 要素を複数使ってはなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>原則として1つの文書の中に <code>pubdate</code> 属性を指定した <code>time</code> 要素は1つだけ記述できます。ただし <code>article</code> 要素がある場合には、<code>article</code> 要素ごとに1つずつ記述できます。このルールに従うようにしてください。</p>
+</dd>
+</dl>
+
+</div>
+
+<hr />
+
+<div class="alert alert-block alert-error">
+
+<p>次のメッセージは最新の仕様に基づいていません。</p>
+
+<p><code>pubdate</code> 属性は HTML5 の仕様から削除されています。<code>pubdate</code> 属性を使用しないでください。</p>
+
+</div>
+
+<div class="muted">
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>For each article element, there must be no more than one time element child with a pubdate attribute
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>個々の <code>article</code> 要素の中では、 pubdate 属性を指定した time 要素が複数あってはなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>article</code> 要素の中に <code>pubdate</code> 属性を持つ <code>time</code> 要素を複数記述することはできません。1つだけ記述してください。</p>
+</dd>
+</dl>
+
+</div>
+
+<hr />
+
+<h3 id="toc_index_13">map 要素のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Duplicate map name '[値]'
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>map 要素の name 属性の値 '[値]' が重複しています</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>コンテンツ文書の中では <code>map</code> 要素の <code>name</code> 属性の値は一意でなければなりません。複数の要素が同じ値を使用しないようにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The id attribute on the map element must have the same value as the name attribute
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>map 要素の id 属性は name 属性と同じ値でなければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>メッセージのとおりです。<code>id</code> 属性と <code>name</code> 属性は同じ値にしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_14">form 要素のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>A select element whose multiple attribute is not specified must not have more than one descendant option element with its selected attribute set
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>multiple 属性を指定しない select 要素は、その子要素に selected 属性を指定した option 要素が複数あってはなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>メッセージのとおりです。<code>select</code> 要素に <code>multiple</code> 属性を指定するか、<code>selected</code> 属性を指定した <code>options</code> 要素が1つだけあるようにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_15">オーディオ／ビデオのエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The track element label attribute value must not be the empty string
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>track 要素の label 属性は空文字列であってはなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>メッセージのとおりです。<code>track</code> 要素の <code>label</code> 属性には何らかの文字を指定してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>There must not be more than one track child of a media element with the default attribute specified
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>メディア要素の子要素に default 属性を指定した track 属性が複数あってはなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>メディア要素とは、<code>audio</code> 要素と <code>video</code> 要素を指します。ひとつのメディア要素に対して <code>track</code> 要素が複数ある場合、 <code>default</code> 属性を指定できるのはひとつだけです。デフォルトとする <code>track</code> 要素を選び、それ以外の要素からは <code>default</code> 属性を取り除いてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_16">参照のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The [属性名] attribute must refer to an element in the same document (the ID '[値]' does not exist)
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[属性名] 属性は同じ文書の中の要素を参照しなければなりません（ID ’[値]’ を持つ要素が見つかりません）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>メッセージのとおりです。属性に指定した <code>id</code> 属性を持つ要素があるか、また属性の値にスペルミスがないか確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The [属性名] attribute must refer to elements in the same document (target ID missing)
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[属性名]属性は同じ文書の中の要素を参照しなければなりません(ターゲットIDがありません)</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>前述のエラーと似ていますが、属性が複数の要素を参照可能な場合にはこのメッセージが出力されます。属性がそれぞれの要素を正しく参照できているか確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The [属性名] attribute does not refer to an allowed target element (expecting: [要素名])
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[属性名]属性が適切な要素を参照していません（要素は[要素名]である必要があります。）</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>属性の中には特定の種類の要素を参照するものがあります。誤った要素を参照するとこのメッセージが出力されます。メッセージが示す要素を参照するようにしてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The [要素名] element must have a [属性名] attribute
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名] 要素には [属性名] 属性が必要です</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>一部の要素には特定の属性が必要なことがあります。指摘された属性を加えてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The [要素名1] element must not appear inside [要素名2] elements
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名2] 要素の中に [要素名1] を書くことはできません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>一部の要素には、書くことのできる子要素が決まっていることがあります。親要素と子要素の関係を確認してください。タグの閉じ忘れでこのメッセージが出力されることもあります。</p>
+</dd>
+</dl>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The [要素名1] element must have an ancestor [要素名2] element
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>[要素名1] には祖先に [要素名2] が必要です</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>一部の要素は、親子関係が決まっているものがあります。親要素と子要素の関係を確認してください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_17">epub:type プロパティのエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Undefined property: [プロパティ名]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>定義されていないプロパティです: [プロパティ名]</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>epub:typeのプロパティは予め定義されています。正しいプロパティを使ってください。または、プロパティ名にスペルミスがないか確認してください。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-content-type-attribute">http://www.idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-content-type-attribute</a></li>
+<li><a href="http://www.idpf.org/epub/vocab/structure/">http://www.idpf.org/epub/vocab/structure/</a></li>
+</ul>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例では epub:type に定義されていないプロパティ "foo" を使用しているためエラーになります。</p>
+
+<pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf"&gt;
+&lt;body epub:type="foo"&gt;
+…
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Undeclared prefix: X
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>未定義の接頭辞です: [接頭辞名]</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>epub:type のプロパティは接頭辞を付けることで独自の拡張することができますが、接頭辞が宣言されていない場合、このメッセージが出力されます。<code>html</code> 要素の中で <code>epub:prefix</code> 属性を使って接頭辞を宣言してください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例では epub:type を接頭辞 my で拡張し、独自の値を指定しています。しかし my の接頭辞が定義されていないためエラーになります。</p>
+
+<pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf"&gt;
+&lt;body epub:type="my:foo"&gt;
+…
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>次は正しい例です。<code>html</code> 要素の中で my の接頭辞を宣言しています。</p>
+
+<pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/opf" epub:prefix="my: http://example.com"&gt;
+&lt;body epub:type="my:foo"&gt;
+…
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<h3 id="toc_index_18">SSMLのエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The ssml:ph attribute must not be specified on a descendant of an element that also carries this attribute
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>ssml:ph 属性を持つ要素の子要素に ssml:ph 属性を指定してはなりません。</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>ssml:ph</code> 属性はテキストの発音情報を指定する属性です。この属性を指定した要素の子要素に別の <code>ssml:ph</code> 属性を指定しても効果はありませんので取り除いてください。</p>
+</dd>
+</dl>
+
+<hr />
+
+<h3 id="toc_index_19">CSS のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The scoped style element must occur before any other flow content other than other style elements and inter-element whitespace
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>scoped 属性を持つ style　要素は他の style　要素や要素間の空白文字を除くあらゆるフローコンテンツよりも先に記述しなければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p><code>style</code>　要素に <code>scoped</code> 属性を指定するとそのスタイルは親要素の範囲にだけ適用されます。この <code>style</code> 要素は親要素の中で<a href="http://www.w3.org/TR/html5/dom.html#flow-content">フローコンテンツ</a>よりも先に記述してください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例は、<code>style</code> 要素よりも先にフローコンテンツである <code>div2</code> が記述されているためエラーになります。</p>
+
+<pre><code>&lt;div class="div1"&gt;
+  &lt;div class="div2"&gt;
+    &lt;p&gt;Lorem ipsum&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;style scoped="scoped"&gt;
+    p { color: red; }
+  &lt;/style&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>次は正しい例です。<code>div2</code> よりも先に <code>style</code> 要素を記述しています。</p>
+
+<pre><code>&lt;div class="div1"&gt;
+  &lt;style scoped="scoped"&gt;
+    p { color: red; }
+  &lt;/style&gt;
+  &lt;div class="div2"&gt;
+    &lt;p&gt;Lorem ipsum&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<h3 id="toc_index_20">代替スタイルシートのエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>Conflicting attributes found: [値]
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>属性に競合があります: [値]</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>Alternate Style Tags の定義する値には、同時に指定できないものがあります。どちらか一方を指定してください。</p>
+</dd>
+
+<dt><strong>参考</strong></dt>
+<dd>
+<ul>
+<li><a href="http://www.idpf.org/epub/altss-tags/">http://www.idpf.org/epub/altss-tags/</a></li>
+</ul>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例は、横組み:horizontal と 縦組み:vertical を同時に指定しているためエラーになります。</p>
+
+<pre><code>&lt;link rel="stylesheet" href="style.css" class="horizontal vertical"/&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<h3 id="toc_index_21">実体のエラー</h3>
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The entity [実体参照] was referenced, but not declared
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>実体 [実体参照] を参照していますが、宣言されていません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>XML/XHTML5 で使える実体参照は &amp;amp;、&amp;lt;、&amp;gt;、&amp;quot;、&amp;apos; だけです。それ以外の文字を記述した場合このメッセージが出力されます。このような文字は代わりに文字参照を使って記述してください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例は著作権記号 &#xA9; を実体参照で記述しているためエラーになります。</p>
+
+<pre><code>&lt;p&gt;Copyright &amp;copy; 2013 電書ちゃんねる&lt;/p&gt;
+</code></pre>
+
+<p>次は正しい例です。同じ文字を実体参照ではなく文字参照で記述しています。</p>
+
+<pre><code>&lt;p&gt;Copyright &amp;xA9; 2013 電書ちゃんねる&lt;/p&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The entity name must immediately follow the '&amp;' in the entity reference
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>'&amp;' 文字を実体参照に変えてください</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>XML/XHTML5 でテキストに '&amp;' の文字を使うことはできません。'&amp;' を表すには '&amp;amp;' と記述してください。</p>
+</dd>
+</dl>
+
+<div class="bs-docs-example">
+
+<p>次の例はテキストに '&amp;' を使っているためエラーになります。</p>
+
+<pre><code>&lt;title&gt;ガールズ &amp; パンツァー&lt;/title&gt;
+</code></pre>
+
+<p>次は正しい例です。'&amp;' を実体参照で記述しています。</p>
+
+<pre><code>&lt;title&gt;ガールズ &amp;amp; パンツァー&lt;/title&gt;
+</code></pre>
+
+</div>
+
+<hr />
+
+<dl>
+<dt>メッセージ</dt>
+<dd>
+<pre><code>The reference to entity [実体参照] must end with the ';' delimiter
+</code></pre>
+</dd>
+
+<dt><strong>意味</strong></dt>
+<dd>
+<p>実体参照 [実体参照] は ';' 文字で終えなければなりません</p>
+</dd>
+
+<dt><strong>原因と対処</strong></dt>
+<dd>
+<p>実体参照の文字は '&amp;' からはじまり ';' で終わる形式で表記します。終わりの ';' が欠けていると、このメッセージが出力されるため、';' を補ってください。</p>
+</dd>
+</dl>
+
+</section>
+
+<footer class="footer">
+
+</footer>
+</body>
+</html>
