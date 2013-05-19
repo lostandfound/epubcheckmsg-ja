@@ -1,70 +1,6 @@
-<style>
-body {
-	margin: auto;
-	padding: 1em;
-	font-size: 0.9em;
-}
-h2 {
-	border-bottom: 1px dotted #317eac;
-}
-.well dl {
-	margin: 0;
-}
-nav, section {
-	margin-bottom: 3em;
-}
-.bs-docs-example {
-  position: relative;
-  margin: 15px 15px 48px;
-  padding: 39px 19px 14px;
-  *padding-top: 19px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-}
-.bs-docs-example:after {
-  content: "Example";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  padding: 3px 7px;
-  font-size: 12px;
-  font-weight: bold;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  color: #9da0a4;
-  -webkit-border-radius: 4px 0 4px 0;
-     -moz-border-radius: 4px 0 4px 0;
-          border-radius: 4px 0 4px 0;
-}
-.bs-docs-example + .prettyprint {
-  margin-top: -20px;
-  padding-top: 15px;
-}
-.bs-docs-example > p:last-child {
-  margin-bottom: 0;
-}
-.bs-docs-example .table,
-.bs-docs-example .progress,
-.bs-docs-example .well,
-.bs-docs-example .alert,
-.bs-docs-example .hero-unit,
-.bs-docs-example .pagination,
-.bs-docs-example .navbar,
-.bs-docs-example > .nav,
-.bs-docs-example blockquote {
-  margin-bottom: 5px;
-}
-.bs-docs-example .pagination {
-  margin-top: 0;
-}
-</style>
-
 <div class="page-header" markdown="1">
 <img width="200" src="denden_proj_logo.png" alt="" />
-# EpubCheck 日本語訳メッセージ一覧 #
+# EpubCheck エラーメッセージ一覧日本語訳 #
 </div>
 
 [EpubCheck](https://code.google.com/p/epubcheck/) はEPUBの検証ソフトウェアで、EPUBが正しく作られているのかを確認する上で欠かせないツールです。
@@ -72,6 +8,9 @@ nav, section {
 しかし、出力されるメッセージが日本語化されていないことや、メッセージの内容の専門性が高いため対処に困る人もいることでしょう。このページではメッセージの意味を日本語で解説し、代表的な対処方法について紹介します。
 
 メッセージの一覧と分類は、”[EPUB 3 Best Practices](http://shop.oreilly.com/product/0636920024897.do)” の記載を参考にしました。<small class="muted">この本の翻訳ではありません。</small>
+
+<div>
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=strawberria-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B00B5KBVIO&amp;ref=tf_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=FFFFFF&amp;bg1=FFFFFF&amp;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe></div>
 
 <div class="well well-small" markdown="1">
 最終更新日
@@ -81,21 +20,11 @@ nav, section {
 : ろす (<@lost_and_found>) from [電書ちゃんねる](http://densho.hatenablog.com/)
 </div>
 
-<div>
-<script type="text/javascript" src="http://wms.assoc-amazon.jp/20070822/JP/js/link-enhancer-common.js?tag=strawberria-22">
-</script>
-<noscript>
-    <img src="http://wms.assoc-amazon.jp/20070822/JP/img/noscript.gif?tag=strawberria-22" alt="" />
-</noscript>
-</div>
-
 <div class="alert alert-block" markdown="1">
 - メッセージの翻訳は公式なものではありません。翻訳上の誤りが含まれている可能性があります。
 - メッセージの一覧は完全なものではありません。
 - 本稿執筆時の EpubCheckのバージョンは 3.0 です。
 </div>
-
-
 
 
 <nav markdown="1">
@@ -140,11 +69,11 @@ nav, section {
 
 :       Content is not allowed in prolog
 
-**意味**
+意味
 
 :   プロローグ部分にはコンテンツを記述できません
 
-**原因と対処**
+原因と対処
 
 :   ルート要素よりも前にテキストノードが存在していることが原因です。ルート要素より前にはXML処理命令とDOCTYPE宣言しか記述することはできません。問題のある記述部分を取り除いてください。
 
@@ -166,11 +95,11 @@ nav, section {
 
 :       Content is not allowed in trailing section
 
-**意味**
+意味
 
 :   ルート要素よりも後ろのセクションにはコンテンツを記述できません
 
-**原因と対処**
+原因と対処
 
 :   ルート要素よりも後ろにテキストノードが存在していることが原因です。問題のある記述部分を取り除いてください。
 
@@ -194,11 +123,11 @@ nav, section {
 
 :       Element [要素名A] not allowed here; expected the element end-tag, text or element [要素名B]
 
-**意味**
+意味
 
 :   ここには [要素名A] を記述できません。（閉じタグ、テキスト、 [要素名B])である必要があります
 
-**原因と対処**
+原因と対処
 
 :   正しい構文に従って要素が使われていない場合に表示されます。特にXHTMLの一部の要素では、中に書くことのできる要素が決まっています。問題のある要素の親要素との関係に注意してください。またタグの閉じ忘れがある場合も考えられます。
 
@@ -208,11 +137,11 @@ nav, section {
 
 :       Element [要素名A] incomplete; expected [要素名B]
 
-**意味**
+意味
 
 :   [要素名A] が不完全です。[要素名B]が必要です
 
-**原因と対処**
+原因と対処
 
 :   [要素名A]の中に、必要なはずの[要素名B]が欠けていることが原因です。例えばパッケージ文書の `metadata` 要素には、 `dc:title`、 `dc:identifier`、 `dc:language` が必要です。[要素名B]を加えてください。
 
@@ -222,11 +151,11 @@ nav, section {
 
 :       The prefix [接頭辞名] for element [要素名] is not bound
 
-**意味**
+意味
 
 :   [要素名]の[接頭辞名]に関連付けがありません
 
-**原因と対処**
+原因と対処
 
 :   名前空間宣言を行わずに`dc` などの接頭辞を利用した場合に出力されます。接頭辞に対応した名前空間宣言を行なってください。
 
@@ -253,11 +182,11 @@ nav, section {
 
 :       Element [要素名] missing required attribute [属性名]
 
-**意味**
+意味
 
 :   [要素名]に必須な[属性名]が欠けています
 
-**原因と対処**
+原因と対処
 
 :   要素によっては特定の属性が必須となるものがあります。指摘された属性を要素に加えてください。
 
@@ -267,11 +196,11 @@ nav, section {
 
 :       Element type [要素名] must be followed by either attribute specifications, ">" or "/>"
 
-**意味**
+意味
 
 :   [要素名]の後ろには仕様に従った属性か、”>"または"/>"が必要です
 
-**原因と対処**
+原因と対処
 
 :   要素が正しく書かれていません。属性の値の引用符やタグのとじ忘れがあった場合に出力されます。対象の要素の属性と閉じタグを確認してください。
 
@@ -283,11 +212,11 @@ nav, section {
 
 :       Attribute [属性名A] not allowed here; expected attribute [属性名B]
 
-**意味**
+意味
 
 :   [属性名A] はここでは利用できません。利用できる属性は[属性名B]です
 
-**原因と対処**
+原因と対処
 
 :   誤った属性を利用している場合に出力されるメッセージです。正しい属性を利用しているか、属性名のスペルミスがないか確認してください。
 
@@ -297,11 +226,11 @@ nav, section {
 
 :       The prefix [接頭辞名] for attribute [属性名] associated with an element type [要素名] is not bound
 
-**意味**
+意味
 
 :   [要素名]の[属性名]で使われている[接頭辞名]に関連付けがありません
 
-**原因と対処**
+原因と対処
 
 :   名前空間宣言を行わずに、`epub` などの接頭辞を利用した場合に出力されます。接頭辞に対応した名前空間宣言を行なってください。
 
@@ -330,11 +259,11 @@ nav, section {
 
 :       Duplicate ID [値]
 
-**意味**
+意味
 
 :   IDの[値]が重複しています
 
-**原因と対処**
+原因と対処
 
 :   文書の中に同じID属性の値を持った要素が複数存在しています。ID属性が重複しないようにしてください。
 
@@ -344,11 +273,11 @@ nav, section {
 
 :       Value of attribute "id" is invalid; must be an XML name without colons
 
-**意味**
+意味
 
 :   "id" 属性の値が不正です。コロンを含まないXML名を指定してください
 
-**原因と対処**
+原因と対処
 
 :   `id` 属性の値が適切ではありません。値にはアルファベット、数字、アンダースコア、ハイフンが利用できますが、先頭の文字に数字、ハイフンは利用できません。
 
@@ -358,11 +287,11 @@ nav, section {
 
 :       The value of attribute [属性名] associated with an element type [要素名] must notcontain the '<' character
 
-**意味**
+意味
 
 :   [要素名]にある[属性名]の値は ’<’ 文字を含んではなりません
 
-**原因と対処**
+原因と対処
 
 :   ’<’は属性の値に使えない文字です。この文字を取り除いてください。
 
@@ -374,11 +303,11 @@ nav, section {
 
 :       Only UTF-8 and UTF-16 encodings are allowed, detected [エンコーディング名]
 
-**意味**
+意味
 
 :   エンコーディングにはUTF-8、UTF-16のみが利用できますが [エンコーディング名] が使われています
 
-**原因と対処**
+原因と対処
 
 :   ファイルがUTF-8またはUTF-16でエンコーディングされていません。エンコーディングを確認してください。
 
@@ -388,11 +317,11 @@ nav, section {
 
 :       Malformed byte sequence: [内容]. Check encoding
 
-**意味**
+意味
 
 :   不正なバイト文字列[内容]があります。エンコーディングを確認してください
 
-**原因と対処**
+原因と対処
 
 :   Unicodeの仕様に従っていないバイト文字列があります。別の文字集合からUnicodeに変換した場合に起こりえます。不正な箇所は視認できません。不正な箇所を検出できるXMLエディタで修正してください。
 
@@ -402,11 +331,11 @@ nav, section {
 
 :       Any Publication Resource that is an XML-Based Media Type must be a conformant XML 1.0 Document. XML Version retrieved: [バージョン番号]
 
-**意味**
+意味
 
 :   XMLベースのメディアタイプを持つあらゆる出版物リソースはXML 1.0に適合した文書でなければなりません。XMLバージョンが[バージョン番号]になっています。
 
-**原因と対処**
+原因と対処
 
 :   XMLバージョンが1.0以外のものを指定したXML文書で出力されるメッセージです。XML宣言のversion属性が 1.0 になっているか確認してください。
 
@@ -418,11 +347,11 @@ nav, section {
 
 :       '[ファイル名]': referenced resource missing in the package
 
-**意味**
+意味
 
 :   参照されているリソース[ファイル名]がパッケージの中に存在しません
 
-**原因と対処**
+原因と対処
 
 :   他のファイルを参照する際、参照先のファイルがZipアーカイブの中に存在しないとこのメッセージが出力されます。参照先のファイルの存在を確認してください。参照パスの記述に誤りがある場合も考えられます。
 
@@ -432,11 +361,11 @@ nav, section {
 
 :       '[識別子名]': fragment identifier is not defined in '[ファイル名]'
 
-**意味**
+意味
 
 :   フラグメント識別子'[識別子名]'が'[ファイル名]'に定義されていません
 
-**原因と対処**
+原因と対処
 
 :   他のファイルを参照する際、参照先のファイルの中にフラグメント識別子に指定した `id` 属性を持つ要素が存在しないとこのメッセージが出力されます。参照先のファイルのフラグメント識別子を確認してください。参照パスの記述に誤りがある場合も考えられます。
 
@@ -449,11 +378,11 @@ nav, section {
 
 :       File name contains characters disallowed in OCF file names: [文字]
 
-**意味**
+意味
 
 :   OCF内のファイル名に不正な文字[文字]が含まれています
 
-**原因と対処**
+原因と対処
 
 :   [OFCの仕様](http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-filenames)にはファイル名に使えない文字が定義されています。該当する文字を使わないようにしてください。
 
@@ -463,11 +392,11 @@ nav, section {
 
 :       Filename contains spaces. Consider changing filename such that URIescaping is not necessary
 
-**意味**
+意味
 
 :   ファイル名にスペースが含まれています。URIエスケープの必要がないファイル名への変更を検討してください。
 
-**原因と対処**
+原因と対処
 
 :   ファイル名にスペースが含まれているとうまく動作しないリーディングシステムがあります。スペースを含まないファイル名にしてください。URIエスケープとはスペース文字をURIに含める際に「%20」に変換する方法です。
 
@@ -477,11 +406,11 @@ nav, section {
 
 :       File name contains non-ascii characters: [文字]. Consider changing filename
 
-**意味**
+意味
 
 :   ファイル名に非アスキー文字[文字]が含まれています。別のファイル名への変更を検討してください。
 
-**原因と対処**
+原因と対処
 
 :   ファイル名に日本語などの文字が含まれているとうまく動作しないリーディングシステムがあります。アスキー文字だけを使ったファイル名に変更してください。（EPUB 3の仕様上は非アスキー文字のファイル名も認められていますが、動作しない実装があるため警告しています）
 
@@ -491,11 +420,11 @@ nav, section {
 
 :       Filename is not allowed to end with '.'
 
-**意味**
+意味
 
 :   ファイル名は '.' で終わってはなりません。
 
-**原因と対処**
+原因と対処
 
 :   ファイル名の最後の文字を '.' 以外のものにしてください。
 
@@ -505,11 +434,11 @@ nav, section {
 
 :       Corrupted ZIP header
 
-**意味**
+意味
 
 :   ZIPのヘッダー部が壊れています。
 
-**原因と対処**
+原因と対処
 
 :   ファイルのヘッダ部ーがZIPの仕様に従っていません。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。
 
@@ -519,11 +448,11 @@ nav, section {
 
 :       Cannot read header
 
-**意味**
+意味
 
 :   ヘッダー部が読み取れません
 
-**原因と対処**
+原因と対処
 
 :   ZIPファイルが壊れています。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。
 
@@ -533,11 +462,11 @@ nav, section {
 
 :       Length of first filename in archive must be 8, but was [数値]
 
-**意味**
+意味
 
 :   
 
-**原因と対処**
+原因と対処
 
 :   ZIPファイルの先頭には mimetype ファイルが配置されている必要があります。それ以外のファイルが配置されている場合にこのメッセージが出力されます。EPUBの仕様に従って正しくZIP圧縮してください。
 
@@ -551,11 +480,11 @@ nav, section {
 
 :       Mimetype entry missing or not the first in archive
 
-**意味**
+意味
 
 :   Mimetype のエントリが欠けているか、アーカイブの先頭にありません
 
-**原因と対処**
+原因と対処
 
 :   ZIPファイルの先頭に mimetype ファイル以外のファイルが配置されており、かつファイル名が8文字だった場合に出力されます。EPUBの仕様に従って正しくZIP圧縮してください。
 
@@ -565,11 +494,11 @@ nav, section {
 
 :       Extra field length for first filename must be 0, but was [数値]
 
-**意味**
+意味
 
 :   最初のファイル名の extra field length は 0 でなければなりませんが[数値]になっています
 
-**原因と対処**
+原因と対処
 
 :   ZIPコンテナにメタデータが加えられており、EPUBの仕様に反しています。別のZIPライブラリを試したりしてみましょう。
 
@@ -580,11 +509,11 @@ nav, section {
 
 :       Mimetype contains wrong type (application/epub+zip) expected
 
-**意味**
+意味
 
 :   Mimetype に不正なメディアタイプが使われています。application/epub+zip である必要があります
 
-**原因と対処**
+原因と対処
 
 :   mimetype ファイルをテキストエディタで編集して、内容が "application/epub+zip" となるようにしてください。
 
@@ -594,11 +523,11 @@ nav, section {
 
 :       Mimetype file should contain only the string "application/epub+zip"
 
-**意味**
+意味
 
 :   Mimetype ファイルには "application/epub+zip" の文字列のみであるべきです
 
-**原因と対処**
+原因と対処
 
 :   mimetype ファイルをテキストエディタで編集して、"application/epub+zip" 以外の文字を取り除いてください。スペースや改行が含まれていてはなりません。
 
@@ -608,11 +537,11 @@ nav, section {
 
 :       Required META-INF/container.xml resource is missing
 
-**意味**
+意味
 
 :   必須ファイル META-INF/container.xml が見つかりません
 
-**原因と対処**
+原因と対処
 
 :   META-INF/container.xml が欠けているため作成してください。
 
@@ -622,11 +551,11 @@ nav, section {
 
 :       No rootfiles with media type 'application/oebps-package+xml'
 
-**意味**
+意味
 
 :   メディアタイプが 'application/oebps-package+xml' であるルートファイルがありません
 
-**原因と対処**
+原因と対処
 
 :   META-INF/container.xml にパッケージ文書を記述した `rootfile` 要素が欠けています。また、 `rootfile` 要素の `media-type` 属性の値にスペルミスがある場合も考えられます。エントリを正しく記述してください。
 
@@ -641,11 +570,11 @@ nav, section {
 
 :       Entry [ファイル名] not found in zip file
 
-**意味**
+意味
 
 :   エントリの[ファイル名]がZIPファイルの中に見当たりません
 
-**原因と対処**
+原因と対処
 
 :   META-INF/container.xml の `rootfile` 要素に記述されたパッケージ文書が見つからない場合に出力されます。`rootfile` 要素の `full-path` 属性の値がパッケージ文書を正しく指しているか確認してください。
 
@@ -658,11 +587,11 @@ nav, section {
 
 :       unique-identifier attribute in package element must reference an existing identifier element id
 
-**意味**
+意味
 
 :   パッケージ要素の unique-identifier 属性は既存の identifier 要素の id を参照しなければなりません
 
-**原因と対処**
+原因と対処
 
 :   `package` 要素の `unique-identifier` 属性の値に一致する `id` 属性を持った `dc:identifier` 要素が `metadata` 要素の中に存在しない場合に出力されるメッセージです。`package` 要素と `dc:identifier` 要素を確認してください。
 
@@ -672,11 +601,11 @@ nav, section {
 
 :       character content of element "[要素名]" invalid; must be a string with length at least 1
 
-**意味**
+意味
 
 :   [要素名]の内容テキストが不正です。少なくとも1文字以上なければなりません
 
-**原因と対処**
+原因と対処
 
 :   要素の内容が空だったりスペース文字だけである場合に出力されます。適切な文字列を記述してください。
 
@@ -686,11 +615,11 @@ nav, section {
 
 :       Package dcterms:modified meta element must occur exactly once
 
-**意味**
+意味
 
 :   パッケージ文書の dcterms:modified meta要素は1つだけ存在しなければなりません
 
-**原因と対処**
+原因と対処
 
 :   パッケージ文書には `property` 属性が dcterms:modified である `meta` 要素が1つ必要です。欠けていたり複数あったりしないか確認してください。
 
@@ -704,11 +633,11 @@ nav, section {
 
 :       dcterms:modified illegal syntax (expecting: 'CCYY-MM-DDThh:mm:ssZ')
 
-**意味**
+意味
 
 :   dcterms:modified の記法が不正です（'CCYY-MM-DDThh:mm:ssZ'形式である必要があります）
 
-**原因と対処**
+原因と対処
 
 :   dcterms:modified を指定した `meta` 要素の値が `CCYY-MM-DDThh:mm:ssZ` の形式であるか確認してください。
 
@@ -718,11 +647,11 @@ nav, section {
 
 :       @refines missing target id: '[値]'
 
-**意味**
+意味
 
 :   refines 属性の参照先アイテムが見つかりません。id: '[値]'
 
-**原因と対処**
+原因と対処
 
 :   `meta` 要素の `refines` 属性には、'#' に続けて参照する要素が持つ `id` 属性の値を記述します。指定した `id` 属性を持った要素が正しく記述されているか確認してください。
 
@@ -732,11 +661,11 @@ nav, section {
 
 :       [種類] file [ファイル名] is missing
 
-**意味**
+意味
 
 :   [種類]のファイル[ファイル名]が見つかりません
 
-**原因と対処**
+原因と対処
 
 :   `manifest` の `item` 要素で宣言されているファイルが、実際のZipアーカイブの中に存在しない場合に出力されます。[種類]の箇所には例えば画像ファイルなら 'image' のように、ファイルの種類が入ります。ファイルの存在を確認してください。
 
@@ -746,11 +675,11 @@ nav, section {
 
 :       item ([ファイル名]) exists in the zip file, but is not declared in the manifest file
 
-**意味**
+意味
 
 :   マニフェストに宣言されていないアイテム ([ファイル名]) がZipファイルの中にあります
 
-**原因と対処**
+原因と対処
 
 :   実際のZipアーカイブの中に存在するファイルが `manifest` の `item` 要素として宣言されていない場合に出力されます。このファイルの `item` 要素を記述してください。
 
@@ -760,11 +689,11 @@ nav, section {
 
 :       '[URI]': remote resource reference not allowed; resource must be placed in the OCF
 
-**意味**
+意味
 
 :   リモートリソース '[URI]' を参照することはできません。リソースをOCFの中に配置してください
 
-**原因と対処**
+原因と対処
 
 :   インターネット上のアイテムを利用できるのは、それがオーディオとビデオの場合のみです。それ以外のファイルはすべてZipファイルの中に配置しなければなりません。
 
@@ -774,11 +703,11 @@ nav, section {
 
 :       Item property: [プロパティ] is not defined for: [メディアタイプ]
 
-**意味**
+意味
 
 :   アイテムのプロパティ[プロパティ]は[メディアタイプ]には使えません
 
-**原因と対処**
+原因と対処
 
 :   指定できる `properties` 属性の値はメディアタイプ毎に決まっています。指定できないプロパティは取り除いてください
 
@@ -788,11 +717,11 @@ nav, section {
 
 :       This file should not declare in opf the properties: X
 
-**意味**
+意味
 
 :   このファイルには OPF で次のプロパティの宣言が必要です: [プロパティ]
 
-**原因と対処**
+原因と対処
 
 :   パッケージ文書中で必要な `properties` 属性を宣言していないアイテムがあります。例えば JavaScriptを利用したXHTMLコンテンツ文書が scripted のプロパティを宣言していない場合が挙げられます。
 
@@ -806,13 +735,13 @@ nav, section {
 
 :       Exactly one manifest item must declare the 'nav' property (number of 'nav' items: [数値]).
 
-**意味**
+意味
 
 :   'nav' プロパティを持つことのできるアイテムは1つだけです（'nav' を指定したアイテムの数: [数値]）
 
-**原因と対処**
+原因と対処
 
-:   `properties`　属性に 'nav' を指定できる `item` 要素は1つだけです。ナビゲーション文書に使うアイテムを1つ選び、それ以外のアイテムからは 'nav' を取り除いてください。
+:   `properties` 属性に 'nav' を指定できる `item` 要素は1つだけです。ナビゲーション文書に使うアイテムを1つ選び、それ以外のアイテムからは 'nav' を取り除いてください。
 
 ----------------------------------------
 
@@ -820,13 +749,13 @@ nav, section {
 
 :       Multiple occurrences of the 'cover-image' property (number of 'cover-image' items: [数値]).
 
-**意味**
+意味
 
 :   'cover-image' プロパティを持つアイテムが複数あります（'cover-image' を指定したアイテムの数: [数値]）
 
-**原因と対処**
+原因と対処
 
-:   `properties`　属性に 'cover-image' を指定できる `item` 要素は1つだけです。表紙画像に使う item を1つ選び、それ以外の item からは 'cover-image' を取り除いてください。
+:   `properties` 属性に 'cover-image' を指定できる `item` 要素は1つだけです。表紙画像に使う item を1つ選び、それ以外の item からは 'cover-image' を取り除いてください。
 
 ----------------------------------------
 
@@ -834,11 +763,11 @@ nav, section {
 
 :       Object type and the item media-type declared in manifest, do not match
 
-**意味**
+意味
 
 :   オブジェクトの type とマニフェストにあるアイテムの media-type が一致しません
 
-**原因と対処**
+原因と対処
 
 :   XHTMLコンテンツ文書で `object` タグが参照するリソースの `type` 属性が、`manifest` の `item` 要素の `media-type` 属性と一致していない場合に出力されます。正しいメディアタイプを確認して、両者が一致するようにしてください。
 
@@ -848,11 +777,11 @@ nav, section {
 
 :       Manifest item element fallback attribute must resolve to another manifest item (given reference was 'X')
 
-**意味**
+意味
 
 :   マニフェストアイテムの fallback 属性は他のマニフェストアイテムに解決しなければなりません（([値]' を参照しています）
 
-**原因と対処**
+原因と対処
 
 :   `manifest` 要素の中の `item` 要素が `fallback` 属性を持つ場合、その値はフォールバック先となる `item` 要素の `id` 属性でなければなりません。`fallback` 属性の値にスペルミスがないか確認してください。
 
@@ -862,13 +791,13 @@ nav, section {
 
 :       Spine item with non-standard media-type '[メディアタイプ]'' with no fallback
 
-**意味**
+意味
 
 :   非標準的なメディアタイプ[メディアタイプ]の spine アイテムにフォールバックがありません
 
-**原因と対処**
+原因と対処
 
-:   XHTML、SVG文書以外のアイテムを `spine` 要素内の `itemref` 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を `fallback`　属性によって参照する必要があります。
+:   XHTML、SVG文書以外のアイテムを `spine` 要素内の `itemref` 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を `fallback` 属性によって参照する必要があります。
 
 ----------------------------------------
 
@@ -876,13 +805,13 @@ nav, section {
 
 :       Spine item with non-standard media-type '[メディアタイプ]' with fallback to non-spine-allowed media-type
 
-**意味**
+意味
 
 :   非標準的なメディアタイプ '[メディアタイプ]' の spine アイテムが spine に記述できないアイテムをフォールバックに指定しています
 
-**原因と対処**
+原因と対処
 
-:   XHTML、SVG文書以外のアイテムを `spine` 要素内の `itemref` 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を `fallback`　属性によって参照する必要があります。それ以外のアイテムをフォールバックに指定すると、このメッセージが出力されます。
+:   XHTML、SVG文書以外のアイテムを `spine` 要素内の `itemref` 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を `fallback` 属性によって参照する必要があります。それ以外のアイテムをフォールバックに指定すると、このメッセージが出力されます。
 
 ----------------------------------------
 
@@ -890,11 +819,11 @@ nav, section {
 
 :       Circular reference in fallback chain
 
-**意味**
+意味
 
 :   フォールバックチェインに循環参照があります
 
-**原因と対処**
+原因と対処
 
 :   `item` 要素は `fallback` 属性によって何段階にもフォールバックさせることができますが、途中に逆方向のフォールバックが含まれているとこのメッセージが出力されます。フォールバックの順序を確認してください。
 
@@ -915,11 +844,11 @@ nav, section {
 
 :       Media overlay items must be of the 'application/smil+xml' type (given type was '[メディアタイプ]')
 
-**意味**
+意味
 
 :   メディアオーバーレイのアイテムはメディアタイプが 'application/smil+xml' でなければなりません（'[メディアタイプ]' が指定されています）
 
-**原因と対処**
+原因と対処
 
 :   `item` 要素にメディアオーバーレイ文書を宣言した場合、その `media-type` 属性は 'application/smil+xml' としてください。
 
@@ -933,11 +862,11 @@ nav, section {
 
 :       Item media:duration meta element not set (expecting: meta property= 'media:duration' refines='#[値]')
 
-**意味**
+意味
 
-:   media:duration の meta　要素が指定されていません（meta 要素の property属性に 'media:duration', refines属性に　'#[値]' を指定する必要があります ）
+:   media:duration の meta 要素が指定されていません（meta 要素の property属性に 'media:duration', refines属性に '#[値]' を指定する必要があります ）
 
-**原因と対処**
+原因と対処
 
 :   コンテンツ文書にメディアオーバーレイを付与する場合、その文書の再生時間を記述した `meta` 要素を記述する必要があります。この指定が欠けているとこのメッセージが出力されます。
 
@@ -951,11 +880,11 @@ nav, section {
 
 :       Global media:duration meta element not set
 
-**意味**
+意味
 
-:   グローバルな media:duration の meta　要素が指定されていません
+:   グローバルな media:duration の meta 要素が指定されていません
 
-**原因と対処**
+原因と対処
 
 :   メディアオーバーレイを付与したコンテンツでは、文書ごとの再生時間を記述した `meta` 要素の他に、それらの再生時間を合計したグローバルな `meta` 要素を記述する必要があります。この指定が欠けているとこのメッセージが出力されます。
 
@@ -969,11 +898,11 @@ nav, section {
 
 :       spine element toc attribute must reference the NCX manifest item (referenced media type was '[メディアタイプ]')
 
-**意味**
+意味
 
 :   spine 要素の toc 属性は NCX のマニフェストアイテムを参照しなければなりません（'[メディアタイプ]'を参照しています）
 
-**原因と対処**
+原因と対処
 
 :   `spine` 要素の `toc` 属性はNCXを参照しなければなりません。参照する `item` 要素の `media-type`属性が 'application/x-dtbncx+xml' となっていない場合にはこのメッセージが出力されます。
 
@@ -983,11 +912,11 @@ nav, section {
 
 :       spine element toc attribute must be set when an NCX is included in the publication
 
-**意味**
+意味
 
 :   出版物にNCXがある場合、spine要素のtoc属性を指定しなければなりません
 
-**原因と対処**
+原因と対処
 
 :   NCXファイルがあるにも関わらず、`spine` 要素の `toc` 属性を利用していない場合にこのメッセージが出力されます。`toc` 属性を記述してください。
 
@@ -1002,11 +931,11 @@ nav, section {
 
 :       The lang and xml:lang attributes must have the same value
 
-**意味**
+意味
 
 :   lang 属性と xml:lang 属性は同じ値でなければなりません
 
-**原因と対処**
+原因と対処
 
 :   lang 属性はHTMLの属性、 xml:lang 属性はXMLの属性で、いずれも言語を表します。両者は併用可能ですが、異なる値を指定すると仕様に反するため、このメッセージが出力されます。両者で同じ値をとるようにしてください。
 
@@ -1023,11 +952,11 @@ nav, section {
 
 :       There must not be more than one meta element with a charset attribute per document
 
-**意味**
+意味
 
 :   charset 属性を持つ meta 要素は1つよりも多くあってはなりません
 
-**原因と対処**
+原因と対処
 
 :   `meta` 要素に `charset` 属性を指定してコンテンツのエンコーディングを表現しますが、複数記述すると仕様に反するためこのメッセージが出力されます。1つだけ記述してください。
 
@@ -1037,11 +966,11 @@ nav, section {
 
 :       The sizes attribute must not be specified on link elements that do not have a rel attribute that specifies the icon keyword
 
-**意味**
+意味
 
 :   rel 属性でキーワードに icon を指定しない link 要素では sizes 属性を指定してはなりません
 
-**原因と対処**
+原因と対処
 
 :   `sizes`属性はアイコンのピクセル数を指定する属性です。`rel` 属性に icon 以外の値を指定した `link` 要素以外では `sizes` 属性を使えないため取り除いてください。 
 
@@ -1061,11 +990,11 @@ nav, section {
 
 :       For each Document, there must be no more than one time element with a pubdate attribute that does not have an ancestor article element
 
-**意味**
+意味
 
 :   個々の文書では、親要素に article 要素がない場合には、 pubdate 属性を指定した time 要素を複数使ってはなりません
 
-**原因と対処**
+原因と対処
 
 :   原則として1つの文書の中に `pubdate` 属性を指定した `time` 要素は1つだけ記述できます。ただし `article` 要素がある場合には、`article` 要素ごとに1つずつ記述できます。このルールに従うようにしてください。
 
@@ -1087,11 +1016,11 @@ nav, section {
 
 :       For each article element, there must be no more than one time element child with a pubdate attribute
 
-**意味**
+意味
 
 :   個々の `article` 要素の中では、 pubdate 属性を指定した time 要素が複数あってはなりません
 
-**原因と対処**
+原因と対処
 
 :   `article` 要素の中に `pubdate` 属性を持つ `time` 要素を複数記述することはできません。1つだけ記述してください。
 
@@ -1105,11 +1034,11 @@ nav, section {
 
 :       Duplicate map name '[値]'
 
-**意味**
+意味
 
 :   map 要素の name 属性の値 '[値]' が重複しています
 
-**原因と対処**
+原因と対処
 
 :   コンテンツ文書の中では `map` 要素の `name` 属性の値は一意でなければなりません。複数の要素が同じ値を使用しないようにしてください。
 
@@ -1119,11 +1048,11 @@ nav, section {
 
 :       The id attribute on the map element must have the same value as the name attribute
 
-**意味**
+意味
 
 :   map 要素の id 属性は name 属性と同じ値でなければなりません
 
-**原因と対処**
+原因と対処
 
 :   メッセージのとおりです。`id` 属性と `name` 属性は同じ値にしてください。
 
@@ -1135,11 +1064,11 @@ nav, section {
 
 :       A select element whose multiple attribute is not specified must not have more than one descendant option element with its selected attribute set
 
-**意味**
+意味
 
 :   multiple 属性を指定しない select 要素は、その子要素に selected 属性を指定した option 要素が複数あってはなりません
 
-**原因と対処**
+原因と対処
 
 :   メッセージのとおりです。`select` 要素に `multiple` 属性を指定するか、`selected` 属性を指定した `options` 要素が1つだけあるようにしてください。
 
@@ -1151,11 +1080,11 @@ nav, section {
 
 :       The track element label attribute value must not be the empty string
 
-**意味**
+意味
 
 :   track 要素の label 属性は空文字列であってはなりません
 
-**原因と対処**
+原因と対処
 
 :   メッセージのとおりです。`track` 要素の `label` 属性には何らかの文字を指定してください。
 
@@ -1165,11 +1094,11 @@ nav, section {
 
 :       There must not be more than one track child of a media element with the default attribute specified
 
-**意味**
+意味
 
 :   メディア要素の子要素に default 属性を指定した track 属性が複数あってはなりません
 
-**原因と対処**
+原因と対処
 
 :   メディア要素とは、`audio` 要素と `video` 要素を指します。ひとつのメディア要素に対して `track` 要素が複数ある場合、 `default` 属性を指定できるのはひとつだけです。デフォルトとする `track` 要素を選び、それ以外の要素からは `default` 属性を取り除いてください。
 
@@ -1181,11 +1110,11 @@ nav, section {
 
 :       The [属性名] attribute must refer to an element in the same document (the ID '[値]' does not exist)
 
-**意味**
+意味
 
 :   [属性名] 属性は同じ文書の中の要素を参照しなければなりません（ID ’[値]’ を持つ要素が見つかりません）
 
-**原因と対処**
+原因と対処
 
 :   メッセージのとおりです。属性に指定した `id` 属性を持つ要素があるか、また属性の値にスペルミスがないか確認してください。
 
@@ -1195,11 +1124,11 @@ nav, section {
 
 :       The [属性名] attribute must refer to elements in the same document (target ID missing)
 
-**意味**
+意味
 
 :   [属性名]属性は同じ文書の中の要素を参照しなければなりません(ターゲットIDがありません)
 
-**原因と対処**
+原因と対処
 
 :   前述のエラーと似ていますが、属性が複数の要素を参照可能な場合にはこのメッセージが出力されます。属性がそれぞれの要素を正しく参照できているか確認してください。
 
@@ -1209,11 +1138,11 @@ nav, section {
 
 :       The [属性名] attribute does not refer to an allowed target element (expecting: [要素名])
 
-**意味**
+意味
 
 :   [属性名]属性が適切な要素を参照していません（要素は[要素名]である必要があります。）
 
-**原因と対処**
+原因と対処
 
 :   属性の中には特定の種類の要素を参照するものがあります。誤った要素を参照するとこのメッセージが出力されます。メッセージが示す要素を参照するようにしてください。
 
@@ -1223,11 +1152,11 @@ nav, section {
 
 :       The [要素名] element must have a [属性名] attribute
 
-**意味**
+意味
 
 :   [要素名] 要素には [属性名] 属性が必要です 
 
-**原因と対処**
+原因と対処
 
 :   一部の要素には特定の属性が必要なことがあります。指摘された属性を加えてください。
 
@@ -1237,11 +1166,11 @@ nav, section {
 
 :       The [要素名1] element must not appear inside [要素名2] elements
 
-**意味**
+意味
 
 :   [要素名2] 要素の中に [要素名1] を書くことはできません
 
-**原因と対処**
+原因と対処
 
 :   一部の要素には、書くことのできる子要素が決まっていることがあります。親要素と子要素の関係を確認してください。タグの閉じ忘れでこのメッセージが出力されることもあります。
 
@@ -1251,11 +1180,11 @@ nav, section {
 
 :       The [要素名1] element must have an ancestor [要素名2] element
 
-**意味**
+意味
 
 :   [要素名1] には祖先に [要素名2] が必要です
 
-**原因と対処**
+原因と対処
 
 :   一部の要素は、親子関係が決まっているものがあります。親要素と子要素の関係を確認してください。
 
@@ -1267,11 +1196,11 @@ nav, section {
 
 :       Undefined property: [プロパティ名]
 
-**意味**
+意味
 
 :   定義されていないプロパティです: [プロパティ名]
 
-**原因と対処**
+原因と対処
 
 :   epub:typeのプロパティは予め定義されています。正しいプロパティを使ってください。または、プロパティ名にスペルミスがないか確認してください。
 
@@ -1297,11 +1226,11 @@ nav, section {
 
 :       Undeclared prefix: X
 
-**意味**
+意味
 
 :   未定義の接頭辞です: [接頭辞名]
 
-**原因と対処**
+原因と対処
 
 :   epub:type のプロパティは接頭辞を付けることで独自の拡張することができますが、接頭辞が宣言されていない場合、このメッセージが出力されます。`html` 要素の中で `epub:prefix` 属性を使って接頭辞を宣言してください。
 
@@ -1333,11 +1262,11 @@ nav, section {
 
 :       The ssml:ph attribute must not be specified on a descendant of an element that also carries this attribute
 
-**意味**
+意味
 
 :   ssml:ph 属性を持つ要素の子要素に ssml:ph 属性を指定してはなりません。
 
-**原因と対処**
+原因と対処
 
 :   `ssml:ph` 属性はテキストの発音情報を指定する属性です。この属性を指定した要素の子要素に別の `ssml:ph` 属性を指定しても効果はありませんので取り除いてください。
 
@@ -1349,13 +1278,13 @@ nav, section {
 
 :       The scoped style element must occur before any other flow content other than other style elements and inter-element whitespace
 
-**意味**
+意味
 
-:   scoped 属性を持つ style　要素は他の style　要素や要素間の空白文字を除くあらゆるフローコンテンツよりも先に記述しなければなりません
+:   scoped 属性を持つ style 要素は他の style 要素や要素間の空白文字を除くあらゆるフローコンテンツよりも先に記述しなければなりません
 
-**原因と対処**
+原因と対処
 
-:   `style`　要素に `scoped` 属性を指定するとそのスタイルは親要素の範囲にだけ適用されます。この `style` 要素は親要素の中で[フローコンテンツ](http://www.w3.org/TR/html5/dom.html#flow-content)よりも先に記述してください。
+:   `style` 要素に `scoped` 属性を指定するとそのスタイルは親要素の範囲にだけ適用されます。この `style` 要素は親要素の中で[フローコンテンツ](http://www.w3.org/TR/html5/dom.html#flow-content)よりも先に記述してください。
 
 <div class="bs-docs-example" markdown="1">
 次の例は、`style` 要素よりも先にフローコンテンツである `div2` が記述されているためエラーになります。
@@ -1390,11 +1319,11 @@ nav, section {
 
 :       Conflicting attributes found: [値]
 
-**意味**
+意味
 
 :   属性に競合があります: [値]
 
-**原因と対処**
+原因と対処
 
 :   Alternate Style Tags の定義する値には、同時に指定できないものがあります。どちらか一方を指定してください。
 
@@ -1417,11 +1346,11 @@ nav, section {
 
 :       The entity [実体参照] was referenced, but not declared
 
-**意味**
+意味
 
 :   実体 [実体参照] を参照していますが、宣言されていません
 
-**原因と対処**
+原因と対処
 
 :   XML/XHTML5 で使える実体参照は &amp;amp;、&amp;lt;、&amp;gt;、&amp;quot;、&amp;apos; だけです。それ以外の文字を記述した場合このメッセージが出力されます。このような文字は代わりに文字参照を使って記述してください。
 
@@ -1442,11 +1371,11 @@ nav, section {
 
 :       The entity name must immediately follow the '&' in the entity reference
 
-**意味**
+意味
 
 :   '&' 文字を実体参照に変えてください
 
-**原因と対処**
+原因と対処
 
 :   XML/XHTML5 でテキストに '&' の文字を使うことはできません。'&' を表すには '&amp;amp;' と記述してください。
 
@@ -1467,11 +1396,11 @@ nav, section {
 
 :       The reference to entity [実体参照] must end with the ';' delimiter
 
-**意味**
+意味
 
 :   実体参照 [実体参照] は ';' 文字で終えなければなりません
 
-**原因と対処**
+原因と対処
 
 :   実体参照の文字は '&' からはじまり ';' で終わる形式で表記します。終わりの ';' が欠けていると、このメッセージが出力されるため、';' を補ってください。
 

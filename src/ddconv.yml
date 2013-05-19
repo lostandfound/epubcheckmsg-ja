@@ -1,0 +1,14 @@
+# ddconv.yml
+
+# バージョン
+ddconvVersion: 1.0
+
+# タイトル
+titles:
+  - content: EpubCheck エラーメッセージ一覧日本語訳
+
+# 出版物が使用する言語（必須）
+language: ja
+
+# ページ送り方向
+pageDirection: ltr

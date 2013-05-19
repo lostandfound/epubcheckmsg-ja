@@ -5048,6 +5048,11 @@ h1, h2 {
 h3 {
   color: #5a5a5a;
 }
+body {
+  margin: auto;
+  padding: 1em;
+  font-size: 0.9em;
+}
 h2 {
   border-bottom: 1px dotted #317eac;
 }

@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="ja" lang="ja">
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css" />
-<style type="text/css">
-body {
-  max-width: 1024px;
-  margin: auto;
-  padding: 1em 2em;
-}
-</style>
-<title>EpubCheck 日本語訳メッセージ一覧</title>
+<link rel="stylesheet" href="style.css" type="text/css" class="horizontal" title="Horizontal Layout" />
+<title>EpubCheck エラーメッセージ一覧日本語訳</title>
 </head>
-<body>
-
+<body class="bodymatter" epub:type="bodymatter">
 <div class="page-header">
 
-<p><img width="200" src="images/denden_proj_logo.png" alt="" /></p>
+<p><img width="200" src="denden_proj_logo.png" alt="" /></p>
 
-<h1 id="toc_index_1">EpubCheck 日本語訳メッセージ一覧</h1>
+<h1 id="toc_index_1">EpubCheck エラーメッセージ一覧日本語訳</h1>
 
 </div>
 
@@ -30,7 +22,8 @@ body {
 
 <p>メッセージの一覧と分類は、”<a href="http://shop.oreilly.com/product/0636920024897.do">EPUB 3 Best Practices</a>” の記載を参考にしました。<small class="muted">この本の翻訳ではありません。</small></p>
 
-<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=strawberria-22&o=9&p=8&l=as1&asins=B00B5KBVIO&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=FFFFFF&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+<div>
+<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=strawberria-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B00B5KBVIO&amp;ref=tf_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=FFFFFF&amp;bg1=FFFFFF&amp;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe></div>
 
 <div class="well well-small">
 
@@ -43,7 +36,6 @@ body {
 </dl>
 
 </div>
-
 
 <div class="alert alert-block">
 
@@ -103,12 +95,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>プロローグ部分にはコンテンツを記述できません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ルート要素よりも前にテキストノードが存在していることが原因です。ルート要素より前にはXML処理命令とDOCTYPE宣言しか記述することはできません。問題のある記述部分を取り除いてください。</p>
 </dd>
@@ -137,12 +129,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ルート要素よりも後ろのセクションにはコンテンツを記述できません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ルート要素よりも後ろにテキストノードが存在していることが原因です。問題のある記述部分を取り除いてください。</p>
 </dd>
@@ -173,12 +165,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ここには [要素名A] を記述できません。（閉じタグ、テキスト、 [要素名B])である必要があります</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>正しい構文に従って要素が使われていない場合に表示されます。特にXHTMLの一部の要素では、中に書くことのできる要素が決まっています。問題のある要素の親要素との関係に注意してください。またタグの閉じ忘れがある場合も考えられます。</p>
 </dd>
@@ -193,12 +185,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名A] が不完全です。[要素名B]が必要です</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>[要素名A]の中に、必要なはずの[要素名B]が欠けていることが原因です。例えばパッケージ文書の <code>metadata</code> 要素には、 <code>dc:title</code>、 <code>dc:identifier</code>、 <code>dc:language</code> が必要です。[要素名B]を加えてください。</p>
 </dd>
@@ -213,12 +205,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名]の[接頭辞名]に関連付けがありません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>名前空間宣言を行わずに<code>dc</code> などの接頭辞を利用した場合に出力されます。接頭辞に対応した名前空間宣言を行なってください。</p>
 </dd>
@@ -253,12 +245,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名]に必須な[属性名]が欠けています</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>要素によっては特定の属性が必須となるものがあります。指摘された属性を要素に加えてください。</p>
 </dd>
@@ -273,12 +265,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名]の後ろには仕様に従った属性か、”>"または"/>"が必要です</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>要素が正しく書かれていません。属性の値の引用符やタグのとじ忘れがあった場合に出力されます。対象の要素の属性と閉じタグを確認してください。</p>
 </dd>
@@ -295,12 +287,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[属性名A] はここでは利用できません。利用できる属性は[属性名B]です</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>誤った属性を利用している場合に出力されるメッセージです。正しい属性を利用しているか、属性名のスペルミスがないか確認してください。</p>
 </dd>
@@ -315,12 +307,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名]の[属性名]で使われている[接頭辞名]に関連付けがありません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>名前空間宣言を行わずに、<code>epub</code> などの接頭辞を利用した場合に出力されます。接頭辞に対応した名前空間宣言を行なってください。</p>
 </dd>
@@ -357,12 +349,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>IDの[値]が重複しています</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>文書の中に同じID属性の値を持った要素が複数存在しています。ID属性が重複しないようにしてください。</p>
 </dd>
@@ -377,12 +369,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>"id" 属性の値が不正です。コロンを含まないXML名を指定してください</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>id</code> 属性の値が適切ではありません。値にはアルファベット、数字、アンダースコア、ハイフンが利用できますが、先頭の文字に数字、ハイフンは利用できません。</p>
 </dd>
@@ -397,12 +389,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名]にある[属性名]の値は ’&lt;’ 文字を含んではなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>’&lt;’は属性の値に使えない文字です。この文字を取り除いてください。</p>
 </dd>
@@ -419,12 +411,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>エンコーディングにはUTF-8、UTF-16のみが利用できますが [エンコーディング名] が使われています</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ファイルがUTF-8またはUTF-16でエンコーディングされていません。エンコーディングを確認してください。</p>
 </dd>
@@ -439,12 +431,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>不正なバイト文字列[内容]があります。エンコーディングを確認してください</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>Unicodeの仕様に従っていないバイト文字列があります。別の文字集合からUnicodeに変換した場合に起こりえます。不正な箇所は視認できません。不正な箇所を検出できるXMLエディタで修正してください。</p>
 </dd>
@@ -459,12 +451,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>XMLベースのメディアタイプを持つあらゆる出版物リソースはXML 1.0に適合した文書でなければなりません。XMLバージョンが[バージョン番号]になっています。</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>XMLバージョンが1.0以外のものを指定したXML文書で出力されるメッセージです。XML宣言のversion属性が 1.0 になっているか確認してください。</p>
 </dd>
@@ -481,12 +473,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>参照されているリソース[ファイル名]がパッケージの中に存在しません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>他のファイルを参照する際、参照先のファイルがZipアーカイブの中に存在しないとこのメッセージが出力されます。参照先のファイルの存在を確認してください。参照パスの記述に誤りがある場合も考えられます。</p>
 </dd>
@@ -501,12 +493,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>フラグメント識別子'[識別子名]'が'[ファイル名]'に定義されていません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>他のファイルを参照する際、参照先のファイルの中にフラグメント識別子に指定した <code>id</code> 属性を持つ要素が存在しないとこのメッセージが出力されます。参照先のファイルのフラグメント識別子を確認してください。参照パスの記述に誤りがある場合も考えられます。</p>
 </dd>
@@ -525,12 +517,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>OCF内のファイル名に不正な文字[文字]が含まれています</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><a href="http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-filenames">OFCの仕様</a>にはファイル名に使えない文字が定義されています。該当する文字を使わないようにしてください。</p>
 </dd>
@@ -545,12 +537,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ファイル名にスペースが含まれています。URIエスケープの必要がないファイル名への変更を検討してください。</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ファイル名にスペースが含まれているとうまく動作しないリーディングシステムがあります。スペースを含まないファイル名にしてください。URIエスケープとはスペース文字をURIに含める際に「%20」に変換する方法です。</p>
 </dd>
@@ -565,12 +557,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ファイル名に非アスキー文字[文字]が含まれています。別のファイル名への変更を検討してください。</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ファイル名に日本語などの文字が含まれているとうまく動作しないリーディングシステムがあります。アスキー文字だけを使ったファイル名に変更してください。（EPUB 3の仕様上は非アスキー文字のファイル名も認められていますが、動作しない実装があるため警告しています）</p>
 </dd>
@@ -585,12 +577,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ファイル名は '.' で終わってはなりません。</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ファイル名の最後の文字を '.' 以外のものにしてください。</p>
 </dd>
@@ -605,12 +597,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ZIPのヘッダー部が壊れています。</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ファイルのヘッダ部ーがZIPの仕様に従っていません。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。</p>
 </dd>
@@ -625,12 +617,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ヘッダー部が読み取れません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ZIPファイルが壊れています。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。</p>
 </dd>
@@ -645,9 +637,9 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
-<p><dt><strong>原因と対処</strong></dt></p>
+<p><dt>原因と対処</dt></p>
 </dd>
 
 <dd>
@@ -671,12 +663,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>Mimetype のエントリが欠けているか、アーカイブの先頭にありません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ZIPファイルの先頭に mimetype ファイル以外のファイルが配置されており、かつファイル名が8文字だった場合に出力されます。EPUBの仕様に従って正しくZIP圧縮してください。</p>
 </dd>
@@ -691,12 +683,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>最初のファイル名の extra field length は 0 でなければなりませんが[数値]になっています</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>ZIPコンテナにメタデータが加えられており、EPUBの仕様に反しています。別のZIPライブラリを試したりしてみましょう。</p>
 </dd>
@@ -711,12 +703,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>Mimetype に不正なメディアタイプが使われています。application/epub+zip である必要があります</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>mimetype ファイルをテキストエディタで編集して、内容が "application/epub+zip" となるようにしてください。</p>
 </dd>
@@ -731,12 +723,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>Mimetype ファイルには "application/epub+zip" の文字列のみであるべきです</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>mimetype ファイルをテキストエディタで編集して、"application/epub+zip" 以外の文字を取り除いてください。スペースや改行が含まれていてはなりません。</p>
 </dd>
@@ -751,12 +743,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>必須ファイル META-INF/container.xml が見つかりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>META-INF/container.xml が欠けているため作成してください。</p>
 </dd>
@@ -771,12 +763,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>メディアタイプが 'application/oebps-package+xml' であるルートファイルがありません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>META-INF/container.xml にパッケージ文書を記述した <code>rootfile</code> 要素が欠けています。また、 <code>rootfile</code> 要素の <code>media-type</code> 属性の値にスペルミスがある場合も考えられます。エントリを正しく記述してください。</p>
 </dd>
@@ -798,12 +790,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>エントリの[ファイル名]がZIPファイルの中に見当たりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>META-INF/container.xml の <code>rootfile</code> 要素に記述されたパッケージ文書が見つからない場合に出力されます。<code>rootfile</code> 要素の <code>full-path</code> 属性の値がパッケージ文書を正しく指しているか確認してください。</p>
 </dd>
@@ -822,12 +814,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>パッケージ要素の unique-identifier 属性は既存の identifier 要素の id を参照しなければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>package</code> 要素の <code>unique-identifier</code> 属性の値に一致する <code>id</code> 属性を持った <code>dc:identifier</code> 要素が <code>metadata</code> 要素の中に存在しない場合に出力されるメッセージです。<code>package</code> 要素と <code>dc:identifier</code> 要素を確認してください。</p>
 </dd>
@@ -842,12 +834,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名]の内容テキストが不正です。少なくとも1文字以上なければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>要素の内容が空だったりスペース文字だけである場合に出力されます。適切な文字列を記述してください。</p>
 </dd>
@@ -862,12 +854,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>パッケージ文書の dcterms:modified meta要素は1つだけ存在しなければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>パッケージ文書には <code>property</code> 属性が dcterms:modified である <code>meta</code> 要素が1つ必要です。欠けていたり複数あったりしないか確認してください。</p>
 </dd>
@@ -889,12 +881,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>dcterms:modified の記法が不正です（'CCYY-MM-DDThh:mm:ssZ'形式である必要があります）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>dcterms:modified を指定した <code>meta</code> 要素の値が <code>CCYY-MM-DDThh:mm:ssZ</code> の形式であるか確認してください。</p>
 </dd>
@@ -909,12 +901,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>refines 属性の参照先アイテムが見つかりません。id: '[値]'</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>meta</code> 要素の <code>refines</code> 属性には、'#' に続けて参照する要素が持つ <code>id</code> 属性の値を記述します。指定した <code>id</code> 属性を持った要素が正しく記述されているか確認してください。</p>
 </dd>
@@ -929,12 +921,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[種類]のファイル[ファイル名]が見つかりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>manifest</code> の <code>item</code> 要素で宣言されているファイルが、実際のZipアーカイブの中に存在しない場合に出力されます。[種類]の箇所には例えば画像ファイルなら 'image' のように、ファイルの種類が入ります。ファイルの存在を確認してください。</p>
 </dd>
@@ -949,12 +941,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>マニフェストに宣言されていないアイテム ([ファイル名]) がZipファイルの中にあります</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>実際のZipアーカイブの中に存在するファイルが <code>manifest</code> の <code>item</code> 要素として宣言されていない場合に出力されます。このファイルの <code>item</code> 要素を記述してください。</p>
 </dd>
@@ -969,12 +961,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>リモートリソース '[URI]' を参照することはできません。リソースをOCFの中に配置してください</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>インターネット上のアイテムを利用できるのは、それがオーディオとビデオの場合のみです。それ以外のファイルはすべてZipファイルの中に配置しなければなりません。</p>
 </dd>
@@ -989,12 +981,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>アイテムのプロパティ[プロパティ]は[メディアタイプ]には使えません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>指定できる <code>properties</code> 属性の値はメディアタイプ毎に決まっています。指定できないプロパティは取り除いてください</p>
 </dd>
@@ -1009,12 +1001,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>このファイルには OPF で次のプロパティの宣言が必要です: [プロパティ]</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>パッケージ文書中で必要な <code>properties</code> 属性を宣言していないアイテムがあります。例えば JavaScriptを利用したXHTMLコンテンツ文書が scripted のプロパティを宣言していない場合が挙げられます。</p>
 </dd>
@@ -1036,14 +1028,14 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>'nav' プロパティを持つことのできるアイテムは1つだけです（'nav' を指定したアイテムの数: [数値]）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
-<p><code>properties</code>　属性に 'nav' を指定できる <code>item</code> 要素は1つだけです。ナビゲーション文書に使うアイテムを1つ選び、それ以外のアイテムからは 'nav' を取り除いてください。</p>
+<p><code>properties</code> 属性に 'nav' を指定できる <code>item</code> 要素は1つだけです。ナビゲーション文書に使うアイテムを1つ選び、それ以外のアイテムからは 'nav' を取り除いてください。</p>
 </dd>
 </dl>
 
@@ -1056,14 +1048,14 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>'cover-image' プロパティを持つアイテムが複数あります（'cover-image' を指定したアイテムの数: [数値]）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
-<p><code>properties</code>　属性に 'cover-image' を指定できる <code>item</code> 要素は1つだけです。表紙画像に使う item を1つ選び、それ以外の item からは 'cover-image' を取り除いてください。</p>
+<p><code>properties</code> 属性に 'cover-image' を指定できる <code>item</code> 要素は1つだけです。表紙画像に使う item を1つ選び、それ以外の item からは 'cover-image' を取り除いてください。</p>
 </dd>
 </dl>
 
@@ -1076,12 +1068,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>オブジェクトの type とマニフェストにあるアイテムの media-type が一致しません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>XHTMLコンテンツ文書で <code>object</code> タグが参照するリソースの <code>type</code> 属性が、<code>manifest</code> の <code>item</code> 要素の <code>media-type</code> 属性と一致していない場合に出力されます。正しいメディアタイプを確認して、両者が一致するようにしてください。</p>
 </dd>
@@ -1096,12 +1088,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>マニフェストアイテムの fallback 属性は他のマニフェストアイテムに解決しなければなりません（([値]' を参照しています）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>manifest</code> 要素の中の <code>item</code> 要素が <code>fallback</code> 属性を持つ場合、その値はフォールバック先となる <code>item</code> 要素の <code>id</code> 属性でなければなりません。<code>fallback</code> 属性の値にスペルミスがないか確認してください。</p>
 </dd>
@@ -1116,14 +1108,14 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>非標準的なメディアタイプ[メディアタイプ]の spine アイテムにフォールバックがありません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
-<p>XHTML、SVG文書以外のアイテムを <code>spine</code> 要素内の <code>itemref</code> 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を <code>fallback</code>　属性によって参照する必要があります。</p>
+<p>XHTML、SVG文書以外のアイテムを <code>spine</code> 要素内の <code>itemref</code> 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を <code>fallback</code> 属性によって参照する必要があります。</p>
 </dd>
 </dl>
 
@@ -1136,14 +1128,14 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>非標準的なメディアタイプ '[メディアタイプ]' の spine アイテムが spine に記述できないアイテムをフォールバックに指定しています</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
-<p>XHTML、SVG文書以外のアイテムを <code>spine</code> 要素内の <code>itemref</code> 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を <code>fallback</code>　属性によって参照する必要があります。それ以外のアイテムをフォールバックに指定すると、このメッセージが出力されます。</p>
+<p>XHTML、SVG文書以外のアイテムを <code>spine</code> 要素内の <code>itemref</code> 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を <code>fallback</code> 属性によって参照する必要があります。それ以外のアイテムをフォールバックに指定すると、このメッセージが出力されます。</p>
 </dd>
 </dl>
 
@@ -1156,12 +1148,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>フォールバックチェインに循環参照があります</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>item</code> 要素は <code>fallback</code> 属性によって何段階にもフォールバックさせることができますが、途中に逆方向のフォールバックが含まれているとこのメッセージが出力されます。フォールバックの順序を確認してください。</p>
 </dd>
@@ -1189,12 +1181,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>メディアオーバーレイのアイテムはメディアタイプが 'application/smil+xml' でなければなりません（'[メディアタイプ]' が指定されています）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>item</code> 要素にメディアオーバーレイ文書を宣言した場合、その <code>media-type</code> 属性は 'application/smil+xml' としてください。</p>
 </dd>
@@ -1216,12 +1208,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
-<p>media:duration の meta　要素が指定されていません（meta 要素の property属性に 'media:duration', refines属性に　'#[値]' を指定する必要があります ）</p>
+<p>media:duration の meta 要素が指定されていません（meta 要素の property属性に 'media:duration', refines属性に '#[値]' を指定する必要があります ）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>コンテンツ文書にメディアオーバーレイを付与する場合、その文書の再生時間を記述した <code>meta</code> 要素を記述する必要があります。この指定が欠けているとこのメッセージが出力されます。</p>
 </dd>
@@ -1243,12 +1235,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
-<p>グローバルな media:duration の meta　要素が指定されていません</p>
+<p>グローバルな media:duration の meta 要素が指定されていません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>メディアオーバーレイを付与したコンテンツでは、文書ごとの再生時間を記述した <code>meta</code> 要素の他に、それらの再生時間を合計したグローバルな <code>meta</code> 要素を記述する必要があります。この指定が欠けているとこのメッセージが出力されます。</p>
 </dd>
@@ -1270,12 +1262,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>spine 要素の toc 属性は NCX のマニフェストアイテムを参照しなければなりません（'[メディアタイプ]'を参照しています）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>spine</code> 要素の <code>toc</code> 属性はNCXを参照しなければなりません。参照する <code>item</code> 要素の <code>media-type</code>属性が 'application/x-dtbncx+xml' となっていない場合にはこのメッセージが出力されます。</p>
 </dd>
@@ -1290,12 +1282,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>出版物にNCXがある場合、spine要素のtoc属性を指定しなければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>NCXファイルがあるにも関わらず、<code>spine</code> 要素の <code>toc</code> 属性を利用していない場合にこのメッセージが出力されます。<code>toc</code> 属性を記述してください。</p>
 </dd>
@@ -1316,12 +1308,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>lang 属性と xml:lang 属性は同じ値でなければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>lang 属性はHTMLの属性、 xml:lang 属性はXMLの属性で、いずれも言語を表します。両者は併用可能ですが、異なる値を指定すると仕様に反するため、このメッセージが出力されます。両者で同じ値をとるようにしてください。</p>
 </dd>
@@ -1345,12 +1337,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>charset 属性を持つ meta 要素は1つよりも多くあってはなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>meta</code> 要素に <code>charset</code> 属性を指定してコンテンツのエンコーディングを表現しますが、複数記述すると仕様に反するためこのメッセージが出力されます。1つだけ記述してください。</p>
 </dd>
@@ -1365,12 +1357,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>rel 属性でキーワードに icon を指定しない link 要素では sizes 属性を指定してはなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>sizes</code>属性はアイコンのピクセル数を指定する属性です。<code>rel</code> 属性に icon 以外の値を指定した <code>link</code> 要素以外では <code>sizes</code> 属性を使えないため取り除いてください。</p>
 </dd>
@@ -1395,12 +1387,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>個々の文書では、親要素に article 要素がない場合には、 pubdate 属性を指定した time 要素を複数使ってはなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>原則として1つの文書の中に <code>pubdate</code> 属性を指定した <code>time</code> 要素は1つだけ記述できます。ただし <code>article</code> 要素がある場合には、<code>article</code> 要素ごとに1つずつ記述できます。このルールに従うようにしてください。</p>
 </dd>
@@ -1427,12 +1419,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>個々の <code>article</code> 要素の中では、 pubdate 属性を指定した time 要素が複数あってはなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>article</code> 要素の中に <code>pubdate</code> 属性を持つ <code>time</code> 要素を複数記述することはできません。1つだけ記述してください。</p>
 </dd>
@@ -1451,12 +1443,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>map 要素の name 属性の値 '[値]' が重複しています</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>コンテンツ文書の中では <code>map</code> 要素の <code>name</code> 属性の値は一意でなければなりません。複数の要素が同じ値を使用しないようにしてください。</p>
 </dd>
@@ -1471,12 +1463,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>map 要素の id 属性は name 属性と同じ値でなければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>メッセージのとおりです。<code>id</code> 属性と <code>name</code> 属性は同じ値にしてください。</p>
 </dd>
@@ -1493,12 +1485,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>multiple 属性を指定しない select 要素は、その子要素に selected 属性を指定した option 要素が複数あってはなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>メッセージのとおりです。<code>select</code> 要素に <code>multiple</code> 属性を指定するか、<code>selected</code> 属性を指定した <code>options</code> 要素が1つだけあるようにしてください。</p>
 </dd>
@@ -1515,12 +1507,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>track 要素の label 属性は空文字列であってはなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>メッセージのとおりです。<code>track</code> 要素の <code>label</code> 属性には何らかの文字を指定してください。</p>
 </dd>
@@ -1535,12 +1527,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>メディア要素の子要素に default 属性を指定した track 属性が複数あってはなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>メディア要素とは、<code>audio</code> 要素と <code>video</code> 要素を指します。ひとつのメディア要素に対して <code>track</code> 要素が複数ある場合、 <code>default</code> 属性を指定できるのはひとつだけです。デフォルトとする <code>track</code> 要素を選び、それ以外の要素からは <code>default</code> 属性を取り除いてください。</p>
 </dd>
@@ -1557,12 +1549,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[属性名] 属性は同じ文書の中の要素を参照しなければなりません（ID ’[値]’ を持つ要素が見つかりません）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>メッセージのとおりです。属性に指定した <code>id</code> 属性を持つ要素があるか、また属性の値にスペルミスがないか確認してください。</p>
 </dd>
@@ -1577,12 +1569,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[属性名]属性は同じ文書の中の要素を参照しなければなりません(ターゲットIDがありません)</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>前述のエラーと似ていますが、属性が複数の要素を参照可能な場合にはこのメッセージが出力されます。属性がそれぞれの要素を正しく参照できているか確認してください。</p>
 </dd>
@@ -1597,12 +1589,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[属性名]属性が適切な要素を参照していません（要素は[要素名]である必要があります。）</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>属性の中には特定の種類の要素を参照するものがあります。誤った要素を参照するとこのメッセージが出力されます。メッセージが示す要素を参照するようにしてください。</p>
 </dd>
@@ -1617,12 +1609,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名] 要素には [属性名] 属性が必要です</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>一部の要素には特定の属性が必要なことがあります。指摘された属性を加えてください。</p>
 </dd>
@@ -1637,12 +1629,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名2] 要素の中に [要素名1] を書くことはできません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>一部の要素には、書くことのできる子要素が決まっていることがあります。親要素と子要素の関係を確認してください。タグの閉じ忘れでこのメッセージが出力されることもあります。</p>
 </dd>
@@ -1657,12 +1649,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>[要素名1] には祖先に [要素名2] が必要です</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>一部の要素は、親子関係が決まっているものがあります。親要素と子要素の関係を確認してください。</p>
 </dd>
@@ -1679,12 +1671,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>定義されていないプロパティです: [プロパティ名]</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>epub:typeのプロパティは予め定義されています。正しいプロパティを使ってください。または、プロパティ名にスペルミスがないか確認してください。</p>
 </dd>
@@ -1720,12 +1712,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>未定義の接頭辞です: [接頭辞名]</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>epub:type のプロパティは接頭辞を付けることで独自の拡張することができますが、接頭辞が宣言されていない場合、このメッセージが出力されます。<code>html</code> 要素の中で <code>epub:prefix</code> 属性を使って接頭辞を宣言してください。</p>
 </dd>
@@ -1764,12 +1756,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>ssml:ph 属性を持つ要素の子要素に ssml:ph 属性を指定してはなりません。</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p><code>ssml:ph</code> 属性はテキストの発音情報を指定する属性です。この属性を指定した要素の子要素に別の <code>ssml:ph</code> 属性を指定しても効果はありませんので取り除いてください。</p>
 </dd>
@@ -1786,14 +1778,14 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
-<p>scoped 属性を持つ style　要素は他の style　要素や要素間の空白文字を除くあらゆるフローコンテンツよりも先に記述しなければなりません</p>
+<p>scoped 属性を持つ style 要素は他の style 要素や要素間の空白文字を除くあらゆるフローコンテンツよりも先に記述しなければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
-<p><code>style</code>　要素に <code>scoped</code> 属性を指定するとそのスタイルは親要素の範囲にだけ適用されます。この <code>style</code> 要素は親要素の中で<a href="http://www.w3.org/TR/html5/dom.html#flow-content">フローコンテンツ</a>よりも先に記述してください。</p>
+<p><code>style</code> 要素に <code>scoped</code> 属性を指定するとそのスタイルは親要素の範囲にだけ適用されます。この <code>style</code> 要素は親要素の中で<a href="http://www.w3.org/TR/html5/dom.html#flow-content">フローコンテンツ</a>よりも先に記述してください。</p>
 </dd>
 </dl>
 
@@ -1836,12 +1828,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>属性に競合があります: [値]</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>Alternate Style Tags の定義する値には、同時に指定できないものがあります。どちらか一方を指定してください。</p>
 </dd>
@@ -1874,12 +1866,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>実体 [実体参照] を参照していますが、宣言されていません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>XML/XHTML5 で使える実体参照は &amp;amp;、&amp;lt;、&amp;gt;、&amp;quot;、&amp;apos; だけです。それ以外の文字を記述した場合このメッセージが出力されます。このような文字は代わりに文字参照を使って記述してください。</p>
 </dd>
@@ -1908,12 +1900,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>'&amp;' 文字を実体参照に変えてください</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>XML/XHTML5 でテキストに '&amp;' の文字を使うことはできません。'&amp;' を表すには '&amp;amp;' と記述してください。</p>
 </dd>
@@ -1942,12 +1934,12 @@ body {
 </code></pre>
 </dd>
 
-<dt><strong>意味</strong></dt>
+<dt>意味</dt>
 <dd>
 <p>実体参照 [実体参照] は ';' 文字で終えなければなりません</p>
 </dd>
 
-<dt><strong>原因と対処</strong></dt>
+<dt>原因と対処</dt>
 <dd>
 <p>実体参照の文字は '&amp;' からはじまり ';' で終わる形式で表記します。終わりの ';' が欠けていると、このメッセージが出力されるため、';' を補ってください。</p>
 </dd>
