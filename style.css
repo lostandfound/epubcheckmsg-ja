@@ -5109,3 +5109,20 @@ nav, section {
 .bs-docs-example .pagination {
   margin-top: 0;
 }
+
+.bridgehead {
+  font-weight: bold;
+  color: #5bb75b;
+}
+
+.label-list {
+  list-style-type: none;
+  margin-left: 0;
+}
+.label-list li {
+  display: inline-block;
+}
+.label-list li a {
+  font-size: 0.8em;
+  line-height: 1.2;
+}

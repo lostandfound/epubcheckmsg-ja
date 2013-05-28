@@ -1,6 +1,6 @@
 <div class="page-header" markdown="1">
 <img width="200" src="denden_proj_logo.png" alt="" />
-# EpubCheck <small>エラーメッセージ一覧</small> #
+# EpubCheck <small>エラーメッセージ一覧日本語訳</small> #
 </div>
 
 [EpubCheck](https://code.google.com/p/epubcheck/) はEPUBの検証ソフトウェアで、EPUBが正しく作られているのかを確認する上で欠かせないツールです。
@@ -10,24 +10,27 @@
 メッセージの一覧と分類は、”[EPUB 3 Best Practices](http://shop.oreilly.com/product/0636920024897.do)” の記載を参考にしました。<small class="muted">この本の翻訳ではありません。</small>
 
 <div class="well well-small" markdown="1">
-最終更新日
+公開日
 : 2013-5-20
+
+最終更新日
+: 2013-5-28
 
 作成者
 : ろす (<@lost_and_found>) from [電書ちゃんねる](http://densho.hatenablog.com/)
 </div>
 
 <div class="alert alert-block" markdown="1">
+- この文書は現在作業中の不完全なものです。
 - メッセージの翻訳は公式なものではありません。翻訳上の誤りが含まれている可能性があります。
 - メッセージの一覧は完全なものではありません。
 - 本稿執筆時の EpubCheckのバージョンは 3.0 です。
 </div>
 
-
-<nav markdown="1">
+<nav id="toc" markdown="1">
 ## 目次 ##
 
-<ol xmlns="http://www.w3.org/1999/xhtml">
+<ol>
 <li><a href="#toc_index_2"><span>目次</span></a></li>
 <li><a href="#toc_index_3"><span>XMLファイルに共通するエラー</span></a>
 <ol>
@@ -54,8 +57,11 @@
 <li><a href="#toc_index_21"><span>実体のエラー</span></a></li>
 </ol>
 </li>
+<li><a href="#index"><span>索引</span></a></li>
 </ol>
 </nav>
+
+----------------------------------------
 
 <section markdown="1">
 ## XMLファイルに共通するエラー ##
@@ -86,6 +92,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -112,6 +123,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 ### 要素のエラー ###
@@ -128,6 +144,11 @@
 
 :   正しい構文に従って要素が使われていない場合に表示されます。特にXHTMLの一部の要素では、中に書くことのできる要素が決まっています。問題のある要素の親要素との関係に注意してください。またタグの閉じ忘れがある場合も考えられます。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -141,6 +162,11 @@
 原因と対処
 
 :   [要素名A]の中に、必要なはずの[要素名B]が欠けていることが原因です。例えばパッケージ文書の `metadata` 要素には、 `dc:title`、 `dc:identifier`、 `dc:language` が必要です。[要素名B]を加えてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -173,6 +199,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -187,6 +218,11 @@
 
 :   要素によっては特定の属性が必須となるものがあります。指摘された属性を要素に加えてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -200,6 +236,11 @@
 原因と対処
 
 :   要素が正しく書かれていません。属性の値の引用符やタグのとじ忘れがあった場合に出力されます。対象の要素の属性と閉じタグを確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -216,6 +257,11 @@
 原因と対処
 
 :   誤った属性を利用している場合に出力されるメッセージです。正しい属性を利用しているか、属性名のスペルミスがないか確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -250,6 +296,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -263,6 +314,11 @@
 原因と対処
 
 :   文書の中に同じID属性の値を持った要素が複数存在しています。ID属性が重複しないようにしてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -278,6 +334,11 @@
 
 :   `id` 属性の値が適切ではありません。値にはアルファベット、数字、アンダースコア、ハイフンが利用できますが、先頭の文字に数字、ハイフンは利用できません。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -292,9 +353,16 @@
 
 :   ’<’は属性の値に使えない文字です。この文字を取り除いてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 ### 文字のエンコーディング ###
+
+<p class="bridgehead" id="UTF_NOT_SUPPORTED">UTF_NOT_SUPPORTED</p>
 
 メッセージ
 
@@ -308,7 +376,35 @@
 
 :   ファイルがUTF-8またはUTF-16でエンコーディングされていません。エンコーディングを確認してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="UTF_NOT_SUPPORTED_BOM">UTF_NOT_SUPPORTED_BOM</p>
+
+メッセージ
+
+:       Only UTF-8 and UTF-16 encodings are allowed, detected [エンコーディング名]　BOM
+
+意味
+
+:   エンコーディングにはUTF-8、UTF-16のみが利用できますがBOM付き [エンコーディング名] が使われています
+
+原因と対処
+
+:   ファイルがUTF-8またはUTF-16でエンコーディングされていません。エンコーディングを確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="MALFORMED_BYTE_SEQUENCE">MALFORMED_BYTE_SEQUENCE</p>
 
 メッセージ
 
@@ -322,7 +418,14 @@
 
 :   Unicodeの仕様に従っていないバイト文字列があります。別の文字集合からUnicodeに変換した場合に起こりえます。不正な箇所は視認できません。不正な箇所を検出できるXMLエディタで修正してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="INVALID_XML_VERSION">INVALID_XML_VERSION</p>
 
 メッセージ
 
@@ -335,6 +438,11 @@
 原因と対処
 
 :   XMLバージョンが1.0以外のものを指定したXML文書で出力されるメッセージです。XML宣言のversion属性が 1.0 になっているか確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -351,6 +459,11 @@
 原因と対処
 
 :   他のファイルを参照する際、参照先のファイルがZipアーカイブの中に存在しないとこのメッセージが出力されます。参照先のファイルの存在を確認してください。参照パスの記述に誤りがある場合も考えられます。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -371,6 +484,8 @@
 <section markdown="1">
 ## コンテナのエラー ##
 
+<p class="bridgehead" id="FILENAME_DISALLOWED_CHARACTERS">FILENAME_DISALLOWED_CHARACTERS</p>
+
 メッセージ
 
 :       File name contains characters disallowed in OCF file names: [文字]
@@ -383,7 +498,14 @@
 
 :   [OFCの仕様](http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-filenames)にはファイル名に使えない文字が定義されています。該当する文字を使わないようにしてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="SPACES_IN_FILENAME">SPACES_IN_FILENAME</p>
 
 メッセージ
 
@@ -397,21 +519,14 @@
 
 :   ファイル名にスペースが含まれているとうまく動作しないリーディングシステムがあります。スペースを含まないファイル名にしてください。URIエスケープとはスペース文字をURIに含める際に「%20」に変換する方法です。
 
-----------------------------------------
-
-メッセージ
-
-:       File name contains non-ascii characters: [文字]. Consider changing filename
-
-意味
-
-:   ファイル名に非アスキー文字[文字]が含まれています。別のファイル名への変更を検討してください。
-
-原因と対処
-
-:   ファイル名に日本語などの文字が含まれているとうまく動作しないリーディングシステムがあります。アスキー文字だけを使ったファイル名に変更してください。（EPUB 3の仕様上は非アスキー文字のファイル名も認められていますが、動作しない実装があるため警告しています）
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
+
+<p class="bridgehead" id="FILENAME_ENDS_IN_DOT">FILENAME_ENDS_IN_DOT</p>
 
 メッセージ
 
@@ -425,7 +540,35 @@
 
 :   ファイル名の最後の文字を '.' 以外のものにしてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="FILENAME_NON_ASCII">FILENAME_NON_ASCII</p>
+
+メッセージ
+
+:       File name contains non-ascii characters: [文字]. Consider changing filename
+
+意味
+
+:   ファイル名に非アスキー文字[文字]が含まれています。別のファイル名への変更を検討してください。
+
+原因と対処
+
+:   ファイル名に日本語などの文字が含まれているとうまく動作しないリーディングシステムがあります。アスキー文字だけを使ったファイル名に変更してください。（EPUB 3の仕様上は非アスキー文字のファイル名も認められていますが、動作しない実装があるため警告しています）
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="CORRUPTED_ZIP_HEADER">CORRUPTED_ZIP_HEADER</p>
 
 メッセージ
 
@@ -439,7 +582,14 @@
 
 :   ファイルのヘッダ部ーがZIPの仕様に従っていません。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="CANNOT_READ_HEADER">CANNOT_READ_HEADER</p>
 
 メッセージ
 
@@ -453,7 +603,14 @@
 
 :   ZIPファイルが壊れています。もう一度ZIP圧縮しなおしたり、別のZIPライブラリを試したりしてみましょう。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="LENGTH_FIRST_FILENAME">LENGTH_FIRST_FILENAME</p>
 
 メッセージ
 
@@ -461,7 +618,7 @@
 
 意味
 
-:   
+:   <mark>TODO</mark>
 
 原因と対処
 
@@ -471,7 +628,14 @@
 
 :   - <http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-zip-container-mime>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="MIMETYPE_ENTRY_MISSING">MIMETYPE_ENTRY_MISSING</p>
 
 メッセージ
 
@@ -484,6 +648,33 @@
 原因と対処
 
 :   ZIPファイルの先頭に mimetype ファイル以外のファイルが配置されており、かつファイル名が8文字だった場合に出力されます。EPUBの仕様に従って正しくZIP圧縮してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="EXTRA_FIELD_LENGTH">EXTRA_FIELD_LENGTH</p>
+
+メッセージ
+
+:       Mimetype entry must not have an extra field in its ZIP header
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -500,11 +691,18 @@
 :   ZIPコンテナにメタデータが加えられており、EPUBの仕様に反しています。別のZIPライブラリを試したりしてみましょう。
 
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="MIMETYPE_WRONG_TYPE">MIMETYPE_WRONG_TYPE</p>
 
 メッセージ
 
-:       Mimetype contains wrong type (application/epub+zip) expected
+:       Mimetype contains wrong type (application/epub+zip expected).
 
 意味
 
@@ -513,6 +711,11 @@
 原因と対処
 
 :   mimetype ファイルをテキストエディタで編集して、内容が "application/epub+zip" となるようにしてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -528,6 +731,11 @@
 
 :   mimetype ファイルをテキストエディタで編集して、"application/epub+zip" 以外の文字を取り除いてください。スペースや改行が含まれていてはなりません。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -541,6 +749,11 @@
 原因と対処
 
 :   META-INF/container.xml が欠けているため作成してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -561,6 +774,11 @@
 :   - <http://www.idpf.org/epub/30/spec/epub30-ocf.html#sec-container-metainf-container.xml>
 
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -580,6 +798,8 @@
 <section markdown="1">
 ## パッケージの検証 ##
 
+<p id="OPF_UNIQUE_ID_REF_NOT_EXISTING" class="bridgehead">OPF_UNIQUE_ID_REF_NOT_EXISTING</p>
+
 メッセージ
 
 :       unique-identifier attribute in package element must reference an existing identifier element id
@@ -591,6 +811,11 @@
 原因と対処
 
 :   `package` 要素の `unique-identifier` 属性の値に一致する `id` 属性を持った `dc:identifier` 要素が `metadata` 要素の中に存在しない場合に出力されるメッセージです。`package` 要素と `dc:identifier` 要素を確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -605,6 +830,11 @@
 原因と対処
 
 :   要素の内容が空だったりスペース文字だけである場合に出力されます。適切な文字列を記述してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -624,6 +854,11 @@
 
 :   - <http://www.idpf.org/epub/30/spec/epub30-publications.html#last-modified-date>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -637,6 +872,11 @@
 原因と対処
 
 :   dcterms:modified を指定した `meta` 要素の値が `CCYY-MM-DDThh:mm:ssZ` の形式であるか確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -652,6 +892,11 @@
 
 :   `meta` 要素の `refines` 属性には、'#' に続けて参照する要素が持つ `id` 属性の値を記述します。指定した `id` 属性を持った要素が正しく記述されているか確認してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -665,6 +910,11 @@
 原因と対処
 
 :   `manifest` の `item` 要素で宣言されているファイルが、実際のZipアーカイブの中に存在しない場合に出力されます。[種類]の箇所には例えば画像ファイルなら 'image' のように、ファイルの種類が入ります。ファイルの存在を確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -680,6 +930,11 @@
 
 :   実際のZipアーカイブの中に存在するファイルが `manifest` の `item` 要素として宣言されていない場合に出力されます。このファイルの `item` 要素を記述してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -694,6 +949,11 @@
 
 :   インターネット上のアイテムを利用できるのは、それがオーディオとビデオの場合のみです。それ以外のファイルはすべてZipファイルの中に配置しなければなりません。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -707,6 +967,11 @@
 原因と対処
 
 :   指定できる `properties` 属性の値はメディアタイプ毎に決まっています。指定できないプロパティは取り除いてください
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -726,6 +991,11 @@
 
 :   - <http://www.idpf.org/epub/30/spec/epub30-publications.html#sec-item-property-values>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -739,6 +1009,11 @@
 原因と対処
 
 :   `properties` 属性に 'nav' を指定できる `item` 要素は1つだけです。ナビゲーション文書に使うアイテムを1つ選び、それ以外のアイテムからは 'nav' を取り除いてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -754,6 +1029,11 @@
 
 :   `properties` 属性に 'cover-image' を指定できる `item` 要素は1つだけです。表紙画像に使う item を1つ選び、それ以外の item からは 'cover-image' を取り除いてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -767,6 +1047,11 @@
 原因と対処
 
 :   XHTMLコンテンツ文書で `object` タグが参照するリソースの `type` 属性が、`manifest` の `item` 要素の `media-type` 属性と一致していない場合に出力されます。正しいメディアタイプを確認して、両者が一致するようにしてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -782,7 +1067,14 @@
 
 :   `manifest` 要素の中の `item` 要素が `fallback` 属性を持つ場合、その値はフォールバック先となる `item` 要素の `id` 属性でなければなりません。`fallback` 属性の値にスペルミスがないか確認してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="OPF_SPINE_NONSTANDARD_MIMETYPE_WITHOUT_FALLBACK">OPF_SPINE_NONSTANDARD_MIMETYPE_WITHOUT_FALLBACK</p>
 
 メッセージ
 
@@ -796,7 +1088,14 @@
 
 :   XHTML、SVG文書以外のアイテムを `spine` 要素内の `itemref` 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を `fallback` 属性によって参照する必要があります。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="OPF_SPINE_NONSTANDARD_MIMETYPE_WITH_NOTALLOWED_FALLBACK">OPF_SPINE_NONSTANDARD_MIMETYPE_WITH_NOTALLOWED_FALLBACK</p>
 
 メッセージ
 
@@ -810,7 +1109,14 @@
 
 :   XHTML、SVG文書以外のアイテムを `spine` 要素内の `itemref` 要素から参照した場合、そのアイテムは同等の内容を持ったXHTMLまたはSVG文書を `fallback` 属性によって参照する必要があります。それ以外のアイテムをフォールバックに指定すると、このメッセージが出力されます。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
+
+<p class="bridgehead" id="OPF_FALLBACK_CIRCULAR_REF">OPF_FALLBACK_CIRCULAR_REF</p>
 
 メッセージ
 
@@ -835,6 +1141,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -852,6 +1163,11 @@
 **参考**
 
 :   - <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-docs-package>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -871,6 +1187,11 @@
 
 :   - <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -889,6 +1210,11 @@
 
 :   - <http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html#sec-package-metadata>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -902,6 +1228,11 @@
 原因と対処
 
 :   `spine` 要素の `toc` 属性はNCXを参照しなければなりません。参照する `item` 要素の `media-type`属性が 'application/x-dtbncx+xml' となっていない場合にはこのメッセージが出力されます。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -943,6 +1274,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -957,6 +1293,11 @@
 
 :   `meta` 要素に `charset` 属性を指定してコンテンツのエンコーディングを表現しますが、複数記述すると仕様に反するためこのメッセージが出力されます。1つだけ記述してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -970,6 +1311,11 @@
 原因と対処
 
 :   `sizes`属性はアイコンのピクセル数を指定する属性です。`rel` 属性に icon 以外の値を指定した `link` 要素以外では `sizes` 属性を使えないため取り除いてください。 
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -997,6 +1343,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 <div class="alert alert-block alert-error" markdown="1">
@@ -1023,6 +1374,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 ### map 要素のエラー ###
@@ -1039,6 +1395,11 @@
 
 :   コンテンツ文書の中では `map` 要素の `name` 属性の値は一意でなければなりません。複数の要素が同じ値を使用しないようにしてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -1052,6 +1413,11 @@
 原因と対処
 
 :   メッセージのとおりです。`id` 属性と `name` 属性は同じ値にしてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -1069,6 +1435,11 @@
 
 :   メッセージのとおりです。`select` 要素に `multiple` 属性を指定するか、`selected` 属性を指定した `options` 要素が1つだけあるようにしてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 ### オーディオ／ビデオのエラー ###
@@ -1085,6 +1456,11 @@
 
 :   メッセージのとおりです。`track` 要素の `label` 属性には何らかの文字を指定してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -1098,6 +1474,11 @@
 原因と対処
 
 :   メディア要素とは、`audio` 要素と `video` 要素を指します。ひとつのメディア要素に対して `track` 要素が複数ある場合、 `default` 属性を指定できるのはひとつだけです。デフォルトとする `track` 要素を選び、それ以外の要素からは `default` 属性を取り除いてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -1115,6 +1496,11 @@
 
 :   メッセージのとおりです。属性に指定した `id` 属性を持つ要素があるか、また属性の値にスペルミスがないか確認してください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -1128,6 +1514,11 @@
 原因と対処
 
 :   前述のエラーと似ていますが、属性が複数の要素を参照可能な場合にはこのメッセージが出力されます。属性がそれぞれの要素を正しく参照できているか確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -1143,6 +1534,11 @@
 
 :   属性の中には特定の種類の要素を参照するものがあります。誤った要素を参照するとこのメッセージが出力されます。メッセージが示す要素を参照するようにしてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -1156,6 +1552,11 @@
 原因と対処
 
 :   一部の要素には特定の属性が必要なことがあります。指摘された属性を加えてください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -1171,6 +1572,11 @@
 
 :   一部の要素には、書くことのできる子要素が決まっていることがあります。親要素と子要素の関係を確認してください。タグの閉じ忘れでこのメッセージが出力されることもあります。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -1184,6 +1590,11 @@
 原因と対処
 
 :   一部の要素は、親子関係が決まっているものがあります。親要素と子要素の関係を確認してください。
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -1216,6 +1627,11 @@
     </html>
 
 </div>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -1251,6 +1667,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 ### SSMLのエラー###
@@ -1267,9 +1688,99 @@
 
 :   `ssml:ph` 属性はテキストの発音情報を指定する属性です。この属性を指定した要素の子要素に別の `ssml:ph` 属性を指定しても効果はありませんので取り除いてください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 ### CSS のエラー ###
+
+<p class="bridgehead" id="CSS_STRING_PARSE_ERROR">CSS_STRING_PARSE_ERROR</p>
+
+メッセージ
+
+:       An error occurred while parsing CSS for %1$s.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="CSS_PROPERTY_NOT_ALLOWED">CSS_PROPERTY_NOT_ALLOWED</p>
+
+メッセージ
+
+:       The \'%1$s\' property must not be included in an EPUB Style Sheet.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="POSITION_FIXED">POSITION_FIXED</p>
+
+メッセージ
+
+:       The fixed value of the position property is not part of the EPUB 3 CSS Profile.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="CSS_FONT_MIMETYPE">CSS_FONT_MIMETYPE</p>
+
+メッセージ
+
+:       Font-face reference %1$s to non-standard font type %2$s
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
 
 メッセージ
 
@@ -1308,9 +1819,16 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 ### 代替スタイルシートのエラー ###
+
+<p class="bridgehead" id="CONFLICTING_ATTRIBUTES">CONFLICTING_ATTRIBUTES</p>
 
 メッセージ
 
@@ -1334,6 +1852,11 @@
     <link rel="stylesheet" href="style.css" class="horizontal vertical"/>
 
 </div>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
 
 ----------------------------------------
 
@@ -1362,6 +1885,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -1387,6 +1915,11 @@
 
 </div>
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
 ----------------------------------------
 
 メッセージ
@@ -1401,7 +1934,1635 @@
 
 :   実体参照の文字は '&' からはじまり ';' で終わる形式で表記します。終わりの ';' が欠けていると、このメッセージが出力されるため、';' を補ってください。
 
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
 </section>
+
+<section markdown="1">
+## 未分類 ##
+
+現在分類中のメッセージです。
+
+<p class="bridgehead" id="FULL_EPUB">FULL_EPUB</p>
+
+メッセージ
+
+:       File is validated as a complete epub archive.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="SINGLE_FILE">SINGLE_FILE</p>
+
+メッセージ
+
+:       File is validated as a single file of type %1$s and version %2$s. Only a subset of the available tests is run.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="MISSING_FILE">MISSING_FILE</p>
+
+メッセージ
+
+:       File %1$s is missing in the package.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="INVALID_OPF_Version">INVALID_OPF_Version</p>
+
+メッセージ
+
+:       Failed obtaining OPF version: %1$s .
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="NAV_NOT_SUPPORTED">NAV_NOT_SUPPORTED</p>
+
+メッセージ
+
+:       The nav file is not supported for epub versions other than 3.0.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="OPV_VERSION_TEST">OPV_VERSION_TEST</p>
+
+メッセージ
+
+:       Tests are done only for the OPF version.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="MODE_VERSION_NOT_SUPPORTED">MODE_VERSION_NOT_SUPPORTED</p>
+
+メッセージ
+
+:       The checker doesn't validate type %1$s and version %2$s.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="VERSION_MISMATCH">VERSION_MISMATCH</p>
+
+メッセージ
+
+:       Validating the EPUB against version %1$s but detected version %2$s.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="VERSION_NOT_FOUND">VERSION_NOT_FOUND</p>
+
+メッセージ
+
+:       Could not detect the EPUB version. Validating against version %1$s.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="NO_ERRORS__OR_WARNINGS">NO_ERRORS__OR_WARNINGS</p>
+
+メッセージ
+
+:       No errors or warnings detected.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="THERE_WERE_ERRORS">THERE_WERE_ERRORS</p>
+
+メッセージ
+
+:       \nCheck finished with warnings or errors\n
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="MODE_VERSION_IGNORED">MODE_VERSION_IGNORED</p>
+
+メッセージ
+
+:       The mode and version arguments are ignored for epubs (They are retrieved from the files.)
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="MODE_REQUIRED">MODE_REQUIRED</p>
+
+メッセージ
+
+:       For files other than epubs, mode must be specified! Default version is 3.0.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="DELETING_ARCHIVE">DELETING_ARCHIVE</p>
+
+メッセージ
+
+:       \nDeleting requested epub archive as it is not valid.\n
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="DISPLAY_HELP">DISPLAY_HELP</p>
+
+メッセージ
+
+:       -help displays help
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="ARGUMENT_NEEDED">ARGUMENT_NEEDED</p>
+
+メッセージ
+
+:       At least one argument expected
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="AFTER_ARGUMENT_EXPECTED">AFTER_ARGUMENT_EXPECTED</p>
+
+メッセージ
+
+:       After the argument %1$s , the %2$s of the file to be checked is expected
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="NO_FILE_SPECIFIED">No file to check was specified in arguments</p>
+
+メッセージ
+
+:       After the argument %1$s , the %2$s of the file to be checked is expected
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="END_OF_EXECUTION">END_OF_EXECUTION</p>
+
+メッセージ
+
+:       The tool will EXIT
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="IO_ERROR">IO_ERROR</p>
+
+メッセージ
+
+:       IO_ERROR
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="NULL_REF">NULL_REF</p>
+
+メッセージ
+
+:       NULL value reference
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="RESOURCE_NOT_AVAILABLE">RESOURCE_NOT_AVAILABLE</p>
+
+メッセージ
+
+:       Could not find resource %1$s
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="FAILED_PERFORMING_SCHEMATRON_TESTS">FAILED_PERFORMING_SCHEMATRON_TESTS</p>
+
+メッセージ
+
+:       Failed performing OPF Schematron tests: %1$s
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="XML_VERSION_NOT_SUPPORTED">XML_VERSION_NOT_SUPPORTED</p>
+
+メッセージ
+
+:       Your system doesn't support xml version verification. Make sure your xml files are conformant to XML 1.0
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="EXTERNAL_ENTITIES_NOT_ALLOWED">EXTERNAL_ENTITIES_NOT_ALLOWED</p>
+
+メッセージ
+
+:       External entities are not allowed. External entity declaration found: 
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="VALIDATING_VERSION_MESSAGE">VALIDATING_VERSION_MESSAGE</p>
+
+メッセージ
+
+:       Validating against EPUB version %1$s 
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="IRREGULAR_DOCTYPE">IRREGULAR_DOCTYPE</p>
+
+メッセージ
+
+:       Irregular DOCTYPE: found \'%1$s\', expecting \'%2$s\'.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="MULTIPLE_OPS_RENDITIONS">MULTIPLE_OPS_RENDITIONS</p>
+
+メッセージ
+
+:       The container includes multiple OPS renditions
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="EMPTY_HREF">EMPTY_HREF</p>
+
+メッセージ
+
+:       Link attribute with no value
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="MISSING_RESOURCE">MISSING_RESOURCE</p>
+
+メッセージ
+
+:       resource '%1$s' is missing
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="RESOURCE_CANNOT_BE_DECRYPTED" class="bridgehead">RESOURCE_CANNOT_BE_DECRYPTED</p>
+
+メッセージ
+
+:       resource '%1$s' cannot be decrypted
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_FILE_MISSING" class="bridgehead">OPF_FILE_MISSING</p>
+
+メッセージ
+
+:       OPF file %1$s is missing
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_GUIDE_REF_UNMANIFESTED" class="bridgehead">OPF_GUIDE_REF_UNMANIFESTED</p>
+
+メッセージ
+
+:       File listed in reference element in guide was not declared in OPF manifest:
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_GUIDE_REF_IS_NO_CONTENT_DOCUMENT" class="bridgehead">OPF_GUIDE_REF_IS_NO_CONTENT_DOCUMENT</p>
+
+メッセージ
+
+:       Guide reference to an item that is not a Content Document:
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_SPINE_ONLY_NON_LINEAR" class="bridgehead">OPF_SPINE_ONLY_NON_LINEAR</p>
+
+メッセージ
+
+:       spine contains only non-linear resources
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_SPINE_MULTI_REFS_TO_SAME_ID" class="bridgehead">OPF_SPINE_MULTI_REFS_TO_SAME_ID</p>
+
+メッセージ
+
+:       spine contains multiple references to the manifest item with id %1$s
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MIMETYPE_TEXTHTML_WRONG_FOR_XHTMLOPS" class="bridgehead">OPF_MIMETYPE_TEXTHTML_WRONG_FOR_XHTMLOPS</p>
+
+メッセージ
+
+:       text/html is not appropriate for XHTML/OPS, use application/xhtml+xml instead
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MIMETYPE_TEXTHTML_WRONG_FOR_OEBPS_12" class="bridgehead">OPF_MIMETYPE_TEXTHTML_WRONG_FOR_OEBPS_12</p>
+
+メッセージ
+
+:       text/html is not appropriate for OEBPS 1.2, use text/x-oeb1-document instead
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MIMETYPE_DEPRECATED" class="bridgehead">OPF_MIMETYPE_DEPRECATED</p>
+
+メッセージ
+
+:       deprecated media-type '%1$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MIMETYPE_IS_BLESSED_ITEM_TYPE" class="bridgehead">OPF_MIMETYPE_IS_BLESSED_ITEM_TYPE</p>
+
+メッセージ
+
+:       use of OPS media-type '%1$s' in OEBPS 1.2 context; use text/x-oeb1-document instead
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MIMETYPE_IS_BLESSED_STYLE_TYPE" class="bridgehead">OPF_MIMETYPE_IS_BLESSED_STYLE_TYPE</p>
+
+メッセージ
+
+:       use of OPS media-type '%1$s' in OEBPS 1.2 context; use text/x-oeb1-css instead
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_FALLBACK_STYLE_ITEM_NOT_FOUND" class="bridgehead">OPF_FALLBACK_STYLE_ITEM_NOT_FOUND</p>
+
+メッセージ
+
+:       fallback-style item could not be found
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p class="bridgehead" id="OPF_MANIFEST_SCRIPTED_PROPERTY_MISSING">OPF_MANIFEST_SCRIPTED_PROPERTY_MISSING</p>
+
+メッセージ
+
+:       Item should have the scripted property set in order to be a valid mediaType handler.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_USING_OEBPS12" class="bridgehead">OPF_USING_OEBPS12</p>
+
+メッセージ
+
+:       OPF file is using OEBPS 1.2 syntax allowing backwards compatibility
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MISSING_OR_EMPTY_UNIQUE_ID_ATTRIBUTE" class="bridgehead">OPF_MISSING_OR_EMPTY_UNIQUE_ID_ATTRIBUTE</p>
+
+メッセージ
+
+:       unique-identifier attribute in package element must be present and have a value
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_ONLY_AUDIO_VIDEO" class="bridgehead">OPF_ONLY_AUDIO_VIDEO</p>
+
+メッセージ
+
+:       Only audio and video remote resources are permitted
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_ITEM_WITH_ID_NOT_FOUND" class="bridgehead">OPF_ITEM_WITH_ID_NOT_FOUND</p>
+
+メッセージ
+
+:       item with id '%1$s' not found
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_TOC_ITEM_WRONG_MIMETYPE" class="bridgehead">OPF_TOC_ITEM_WRONG_MIMETYPE</p>
+
+メッセージ
+
+:       toc attribute references resource with non-NCX mime type; "application/x-dtbncx+xml" is expected
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_DEPRECATED_ELEMENT" class="bridgehead">OPF_DEPRECATED_ELEMENT</p>
+
+メッセージ
+
+:       use of deprecated element '%1$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_DC_ROLE_VALUE_INVALID" class="bridgehead">OPF_DC_ROLE_VALUE_INVALID</p>
+
+メッセージ
+
+:       role value '%1$s' is not valid
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_EPUB3_META_DATE_INVALID" class="bridgehead">OPF_EPUB3_META_DATE_INVALID</p>
+
+メッセージ
+
+:       date value '%1$s' does not follow recommended syntax as per http://www.w3.org/TR/NOTE-datetime: %2$s
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_EPUB2_META_DATE_INVALID " class="bridgehead">OPF_EPUB2_META_DATE_INVALID </p>
+
+メッセージ
+
+:       date value '%1$s' is not valid as per http://www.w3.org/TR/NOTE-datetime: %2$s
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_EMPTY_ELEMENT" class="bridgehead">OPF_EMPTY_ELEMENT</p>
+
+メッセージ
+
+:       %1$s element is empty
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MIMETYPE_IS_CORE_MEDIATYPE" class="bridgehead">OPF_MIMETYPE_IS_CORE_MEDIATYPE</p>
+
+メッセージ
+
+:       The media-type '%1$s' is a core media type
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_MIMETYPE_HANDLER_ALREADY_ASSIGNED" class="bridgehead">OPF_MIMETYPE_HANDLER_ALREADY_ASSIGNED</p>
+
+メッセージ
+
+:       The media-type '%1$s' has already been assigned a handler
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_ITEMREF_WITH_INVALID_PAGESPREAD" class="bridgehead">OPF_ITEMREF_WITH_INVALID_PAGESPREAD</p>
+
+メッセージ
+
+:       itemref can't have both page-spread-right and page-spread-left properties
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_ITEM_PROPERTY_NOT_DEFINED" class="bridgehead">OPF_ITEM_PROPERTY_NOT_DEFINED</p>
+
+メッセージ
+
+:       Item property: '%1$s' is not defined for media type: %1$s
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_REMOTE_RESOURCE_NOT_ALLOWED" class="bridgehead">OPF_REMOTE_RESOURCE_NOT_ALLOWED</p>
+
+メッセージ
+
+:       '%1$s': remote resource reference not allowed; resource must be placed in the OCF
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_REF_RESOURCE_MISSING" class="bridgehead">OPF_REF_RESOURCE_MISSING</p>
+
+メッセージ
+
+:       '%1$s': referenced resource missing in the package.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_REF_RESOURCE_NOT_DECLARED" class="bridgehead">OPF_REF_RESOURCE_NOT_DECLARED</p>
+
+メッセージ
+
+:       '%1$s': referenced resource is not declared in the OPF manifest.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_FRAGMENT_ID_MISSING" class="bridgehead">OPF_FRAGMENT_ID_MISSING</p>
+
+メッセージ
+
+:       fragment identifier missing in reference to '%1$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_HYPERLINK_TO_NONSTANDARD_RES" class="bridgehead">OPF_HYPERLINK_TO_NONSTANDARD_RES</p>
+
+メッセージ
+
+:       hyperlink to non-standard resource '%1$s' of type '%2$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_HYPERLINK_RES_OUTSIDE_SPINE" class="bridgehead">OPF_HYPERLINK_RES_OUTSIDE_SPINE</p>
+
+メッセージ
+
+:       hyperlink to resource outside spine '%1$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_NONSTANDARD_IMAGE" class="bridgehead">OPF_NONSTANDARD_IMAGE</p>
+
+メッセージ
+
+:       non-standard image resource '%1$s' of type '%2$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_NONSTANDARD_STYLESHEET" class="bridgehead">OPF_NONSTANDARD_STYLESHEET</p>
+
+メッセージ
+
+:       non-standard stylesheet resource '%1$s' of type '%2$s'. A fallback must be specified.
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_FRAGMENT_ID_FOR_IMG" class="bridgehead">OPF_FRAGMENT_ID_FOR_IMG</p>
+
+メッセージ
+
+:       fragment identifier used for image resource '%1$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_FRAGMENT_ID_FOR_STYLE" class="bridgehead">OPF_FRAGMENT_ID_FOR_STYLE</p>
+
+メッセージ
+
+:       fragment identifier used for stylesheet resource '%1$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_FRAGMENT_ID_NOT_DEFINED_IN" class="bridgehead">OPF_FRAGMENT_ID_NOT_DEFINED_IN</p>
+
+メッセージ
+
+:       '%1$s': fragment identifier is not defined in '%2$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OPF_FRAGMENT_ID_DEFINES_INCOMPATIBLE_RES" class="bridgehead">OPF_FRAGMENT_ID_DEFINES_INCOMPATIBLE_RES</p>
+
+メッセージ
+
+:       fragment identifier '%1$s' defines incompatible resource type in '%2$s'
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OCF_CONTAINERXML_FULLPATH_ATTR_MISSING" class="bridgehead">OCF_CONTAINERXML_FULLPATH_ATTR_MISSING</p>
+
+メッセージ
+
+:       element "rootfile" missing required attribute "full-path"
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="OCF_CONTAINERXML_FULLPATH_ATTR_EMPTY" class="bridgehead">OCF_CONTAINERXML_FULLPATH_ATTR_EMPTY</p>
+
+メッセージ
+
+:       attribute "full-path" on element "rootfile" must not be empty
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+<p id="CLI_OUTPUT_XML" class="bridgehead">CLI_OUTPUT_XML</p>
+
+メッセージ
+
+:       Assessment XML document was saved in:
+
+意味
+
+:   <mark>TODO</mark>
+
+原因と対処
+
+:   <mark>TODO</mark>
+
+<ul class="label-list">
+<li><a class="btn" href="#toc">目次</a></li>
+<li><a class="btn" href="#index">索引</a></li>                    
+</ul>
+
+----------------------------------------
+
+</section>
+
+
+<nav id="index" markdown="1">
+## 索引 ##
+<ol style="list-style:none;">
+<li><a href="#FULL_EPUB">FULL_EPUB</a></li>
+<li><a href="#SINGLE_FILE">SINGLE_FILE</a></li>
+<li><a href="#MISSING_FILE">MISSING_FILE</a></li>
+<li><a href="#INVALID_OPF_Version">INVALID_OPF_Version</a></li>
+<li><a href="#NAV_NOT_SUPPORTED">NAV_NOT_SUPPORTED</a></li>
+<li><a href="#OPV_VERSION_TEST">OPV_VERSION_TEST</a></li>
+<li><a href="#MODE_VERSION_NOT_SUPPORTED">MODE_VERSION_NOT_SUPPORTED</a></li>
+<li><a href="#VERSION_MISMATCH">VERSION_MISMATCH</a></li>
+<li><a href="#VERSION_NOT_FOUND">VERSION_NOT_FOUND</a></li>
+<li><a href="#NO_ERRORS__OR_WARNINGS">NO_ERRORS__OR_WARNINGS</a></li>
+<li><a href="#THERE_WERE_ERRORS">THERE_WERE_ERRORS</a></li>
+<li><a href="#DELETING_ARCHIVE">DELETING_ARCHIVE</a></li>
+<li><a href="#DISPLAY_HELP">DISPLAY_HELP</a></li>
+<li><a href="#ARGUMENT_NEEDED">ARGUMENT_NEEDED</a></li>
+<li><a href="#AFTER_ARGUMENT_EXPECTED">AFTER_ARGUMENT_EXPECTED</a></li>
+<li><a href="#NO_FILE_SPECIFIED">NO_FILE_SPECIFIED</a></li>
+<li><a href="#END_OF_EXECUTION">END_OF_EXECUTION</a></li>
+<li><a href="#MODE_VERSION_IGNORED">MODE_VERSION_IGNORED</a></li>
+<li><a href="#MODE_REQUIRED">MODE_REQUIRED</a></li>
+<li><a href="#CANNOT_READ_HEADER">CANNOT_READ_HEADER</a></li>
+<li><a href="#CORRUPTED_ZIP_HEADER">CORRUPTED_ZIP_HEADER</a></li>
+<li><a href="#LENGTH_FIRST_FILENAME">LENGTH_FIRST_FILENAME</a></li>
+<li><a href="#EXTRA_FIELD_LENGTH">EXTRA_FIELD_LENGTH</a></li>
+<li><a href="#MIMETYPE_ENTRY_MISSING">MIMETYPE_ENTRY_MISSING</a></li>
+<li><a href="#MIMETYPE_WRONG_TYPE">MIMETYPE_WRONG_TYPE</a></li>
+<li><a href="#IO_ERROR">IO_ERROR</a></li>
+<li><a href="#NULL_REF">NULL_REF</a></li>
+<li><a href="#RESOURCE_NOT_AVAILABLE">RESOURCE_NOT_AVAILABLE</a></li>
+<li><a href="#UTF_NOT_SUPPORTED">UTF_NOT_SUPPORTED</a></li>
+<li><a href="#UTF_NOT_SUPPORTED_BOM">UTF_NOT_SUPPORTED_BOM</a></li>
+<li><a href="#MALFORMED_BYTE_SEQUENCE">MALFORMED_BYTE_SEQUENCE</a></li>
+<li><a href="#FAILED_PERFORMING_SCHEMATRON_TESTS">FAILED_PERFORMING_SCHEMATRON_TESTS</a></li>
+<li><a href="#FILENAME_DISALLOWED_CHARACTERS">FILENAME_DISALLOWED_CHARACTERS</a></li>
+<li><a href="#SPACES_IN_FILENAME">SPACES_IN_FILENAME</a></li>
+<li><a href="#FILENAME_ENDS_IN_DOT">FILENAME_ENDS_IN_DOT</a></li>
+<li><a href="#FILENAME_NON_ASCII">FILENAME_NON_ASCII</a></li>
+<li><a href="#CONFLICTING_ATTRIBUTES">CONFLICTING_ATTRIBUTES</a></li>
+<li><a href="#INVALID_XML_VERSION">INVALID_XML_VERSION</a></li>
+<li><a href="#XML_VERSION_NOT_SUPPORTED">XML_VERSION_NOT_SUPPORTED</a></li>
+<li><a href="#EXTERNAL_ENTITIES_NOT_ALLOWED">EXTERNAL_ENTITIES_NOT_ALLOWED</a></li>
+<li><a href="#CSS_STRING_PARSE_ERROR">CSS_STRING_PARSE_ERROR</a></li>
+<li><a href="#VALIDATING_VERSION_MESSAGE">VALIDATING_VERSION_MESSAGE</a></li>
+<li><a href="#IRREGULAR_DOCTYPE">IRREGULAR_DOCTYPE</a></li>
+<li><a href="#CSS_PROPERTY_NOT_ALLOWED">CSS_PROPERTY_NOT_ALLOWED</a></li>
+<li><a href="#MULTIPLE_OPS_RENDITIONS">MULTIPLE_OPS_RENDITIONS</a></li>
+<li><a href="#POSITION_FIXED">POSITION_FIXED</a></li>
+<li><a href="#CSS_FONT_MIMETYPE">CSS_FONT_MIMETYPE</a></li>
+<li><a href="#EMPTY_HREF">EMPTY_HREF</a></li>
+<li><a href="#MISSING_RESOURCE">MISSING_RESOURCE</a></li>
+<li><a href="#RESOURCE_CANNOT_BE_DECRYPTED">RESOURCE_CANNOT_BE_DECRYPTED</a></li>
+<li><a href="#OPF_FILE_MISSING">OPF_FILE_MISSING</a></li>
+<li><a href="#OPF_UNIQUE_ID_REF_NOT_EXISTING">OPF_UNIQUE_ID_REF_NOT_EXISTING</a></li>
+<li><a href="#OPF_GUIDE_REF_UNMANIFESTED">OPF_GUIDE_REF_UNMANIFESTED</a></li>
+<li><a href="#OPF_GUIDE_REF_IS_NO_CONTENT_DOCUMENT">OPF_GUIDE_REF_IS_NO_CONTENT_DOCUMENT</a></li>
+<li><a href="#OPF_SPINE_ONLY_NON_LINEAR">OPF_SPINE_ONLY_NON_LINEAR</a></li>
+<li><a href="#OPF_SPINE_MULTI_REFS_TO_SAME_ID">OPF_SPINE_MULTI_REFS_TO_SAME_ID</a></li>
+<li><a href="#OPF_MIMETYPE_TEXTHTML_WRONG_FOR_XHTMLOPS">OPF_MIMETYPE_TEXTHTML_WRONG_FOR_XHTMLOPS</a></li>
+<li><a href="#OPF_MIMETYPE_TEXTHTML_WRONG_FOR_OEBPS_12">OPF_MIMETYPE_TEXTHTML_WRONG_FOR_OEBPS_12</a></li>
+<li><a href="#OPF_MIMETYPE_DEPRECATED">OPF_MIMETYPE_DEPRECATED</a></li>
+<li><a href="#OPF_MIMETYPE_IS_BLESSED_ITEM_TYPE">OPF_MIMETYPE_IS_BLESSED_ITEM_TYPE</a></li>
+<li><a href="#OPF_MIMETYPE_IS_BLESSED_STYLE_TYPE">OPF_MIMETYPE_IS_BLESSED_STYLE_TYPE</a></li>
+<li><a href="#OPF_FALLBACK_ITEM_NOT_FOUND">OPF_FALLBACK_ITEM_NOT_FOUND</a></li>
+<li><a href="#OPF_FALLBACK_STYLE_ITEM_NOT_FOUND">OPF_FALLBACK_STYLE_ITEM_NOT_FOUND</a></li>
+<li><a href="#OPF_SPINE_NONSTANDARD_MIMETYPE_WITHOUT_FALLBACK">OPF_SPINE_NONSTANDARD_MIMETYPE_WITHOUT_FALLBACK</a></li>
+<li><a href="#OPF_SPINE_NONSTANDARD_MIMETYPE_WITH_NOTALLOWED_FALLBACK">OPF_SPINE_NONSTANDARD_MIMETYPE_WITH_NOTALLOWED_FALLBACK</a></li>
+<li><a href="#OPF_FALLBACK_CIRCULAR_REF">OPF_FALLBACK_CIRCULAR_REF</a></li>
+<li><a href="#OPF_MANIFEST_SCRIPTED_PROPERTY_MISSING">OPF_MANIFEST_SCRIPTED_PROPERTY_MISSING</a></li>
+<li><a href="#OPF_USING_OEBPS12">OPF_USING_OEBPS12</a></li>
+<li><a href="#OPF_MISSING_OR_EMPTY_UNIQUE_ID_ATTRIBUTE">OPF_MISSING_OR_EMPTY_UNIQUE_ID_ATTRIBUTE</a></li>
+<li><a href="#OPF_ONLY_AUDIO_VIDEO">OPF_ONLY_AUDIO_VIDEO</a></li>
+<li><a href="#OPF_ITEM_WITH_ID_NOT_FOUND">OPF_ITEM_WITH_ID_NOT_FOUND</a></li>
+<li><a href="#OPF_TOC_ITEM_WRONG_MIMETYPE">OPF_TOC_ITEM_WRONG_MIMETYPE</a></li>
+<li><a href="#OPF_DEPRECATED_ELEMENT">OPF_DEPRECATED_ELEMENT</a></li>
+<li><a href="#OPF_DC_ROLE_VALUE_INVALID">OPF_DC_ROLE_VALUE_INVALID</a></li>
+<li><a href="#OPF_EPUB3_META_DATE_INVALID">OPF_EPUB3_META_DATE_INVALID</a></li>
+<li><a href="#OPF_EPUB2_META_DATE_INVALID">OPF_EPUB2_META_DATE_INVALID </a></li>
+<li><a href="#OPF_EMPTY_ELEMENT">OPF_EMPTY_ELEMENT</a></li>
+<li><a href="#OPF_MIMETYPE_IS_CORE_MEDIATYPE">OPF_MIMETYPE_IS_CORE_MEDIATYPE</a></li>
+<li><a href="#OPF_MIMETYPE_HANDLER_ALREADY_ASSIGNED">OPF_MIMETYPE_HANDLER_ALREADY_ASSIGNED</a></li>
+<li><a href="#OPF_ITEMREF_WITH_INVALID_PAGESPREAD">OPF_ITEMREF_WITH_INVALID_PAGESPREAD</a></li>
+<li><a href="#OPF_ITEM_PROPERTY_NOT_DEFINED">OPF_ITEM_PROPERTY_NOT_DEFINED</a></li>
+<li><a href="#OPF_REMOTE_RESOURCE_NOT_ALLOWED">OPF_REMOTE_RESOURCE_NOT_ALLOWED</a></li>
+<li><a href="#OPF_REF_RESOURCE_MISSING">OPF_REF_RESOURCE_MISSING</a></li>
+<li><a href="#OPF_REF_RESOURCE_NOT_DECLARED">OPF_REF_RESOURCE_NOT_DECLARED</a></li>
+<li><a href="#OPF_FRAGMENT_ID_MISSING">OPF_FRAGMENT_ID_MISSING</a></li>
+<li><a href="#OPF_HYPERLINK_TO_NONSTANDARD_RES">OPF_HYPERLINK_TO_NONSTANDARD_RES</a></li>
+<li><a href="#OPF_HYPERLINK_RES_OUTSIDE_SPINE">OPF_HYPERLINK_RES_OUTSIDE_SPINE</a></li>
+<li><a href="#OPF_NONSTANDARD_IMAGE">OPF_NONSTANDARD_IMAGE</a></li>
+<li><a href="#OPF_NONSTANDARD_STYLESHEET">OPF_NONSTANDARD_STYLESHEET</a></li>
+<li><a href="#OPF_FRAGMENT_ID_FOR_IMG">OPF_FRAGMENT_ID_FOR_IMG</a></li>
+<li><a href="#OPF_FRAGMENT_ID_FOR_STYLE">OPF_FRAGMENT_ID_FOR_STYLE</a></li>
+<li><a href="#OPF_FRAGMENT_ID_NOT_DEFINED_IN">OPF_FRAGMENT_ID_NOT_DEFINED_IN</a></li>
+<li><a href="#OPF_FRAGMENT_ID_DEFINES_INCOMPATIBLE_RES">OPF_FRAGMENT_ID_DEFINES_INCOMPATIBLE_RES</a></li>
+<li><a href="#OCF_CONTAINERXML_FULLPATH_ATTR_MISSING">OCF_CONTAINERXML_FULLPATH_ATTR_MISSING</a></li>
+<li><a href="#OCF_CONTAINERXML_FULLPATH_ATTR_EMPTY">OCF_CONTAINERXML_FULLPATH_ATTR_EMPTY</a></li>
+<li><a href="#CLI_OUTPUT_XML">CLI_OUTPUT_XML</a></li>
+</ol>
+</nav>
 
 <footer class="footer" markdown="1">
 
